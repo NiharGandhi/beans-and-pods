@@ -1,8 +1,22 @@
 import { PageHeader } from "@/components/page-header"
 import { ProductDetails } from "@/components/product-details"
 import { RelatedProducts } from "@/components/related-products"
-import { getProductBySlug, getRelatedProducts } from "@/lib/redis"
+import { getProductBySlug, getProducts, getRelatedProducts } from "@/lib/redis"
 import { notFound } from "next/navigation"
+
+export async function generateStaticParams() {
+  try {
+    const products = await getProducts();
+
+    return products.map((product) => ({
+      slug: product.slug,
+    }))
+
+  } catch (error) {
+    console.error('Error generating static params:', error)
+    return []
+  }
+}
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const product = await getProductBySlug(params.slug)
