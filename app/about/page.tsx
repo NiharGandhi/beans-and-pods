@@ -41,7 +41,6 @@ export default async function AboutPage() {
       </div>
 
       <ValuesSection />
-      <TeamSection team={[]} />
     </div>
   )
 }

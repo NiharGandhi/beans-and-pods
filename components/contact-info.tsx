@@ -7,7 +7,7 @@ export function ContactInfo() {
         <h2 className="text-xl font-semibold mb-6">Contact Information</h2>
         <div className="space-y-4">
           <div className="flex items-start">
-            <MapPin className="h-5 w-5 text-green-600 mt-1 mr-3" />
+            <MapPin className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
               <p className="font-medium">Address</p>
               <p className="text-gray-600">
@@ -23,7 +23,7 @@ export function ContactInfo() {
           </div>
 
           <div className="flex items-start">
-            <Phone className="h-5 w-5 text-green-600 mt-1 mr-3" />
+            <Phone className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
               <p className="font-medium">Phone</p>
               <p className="text-gray-600">+1 (555) 123-4567</p>
@@ -31,7 +31,7 @@ export function ContactInfo() {
           </div>
 
           <div className="flex items-start">
-            <Mail className="h-5 w-5 text-green-600 mt-1 mr-3" />
+            <Mail className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
               <p className="font-medium">Email</p>
               <p className="text-gray-600">info@beansandpods.com</p>
@@ -39,7 +39,7 @@ export function ContactInfo() {
           </div>
 
           <div className="flex items-start">
-            <Clock className="h-5 w-5 text-green-600 mt-1 mr-3" />
+            <Clock className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
               <p className="font-medium">Business Hours</p>
               <p className="text-gray-600">

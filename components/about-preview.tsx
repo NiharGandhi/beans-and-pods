@@ -20,7 +20,7 @@ export function AboutPreview() {
           </h2>
           <div className="prose max-w-none">
             <p className="text-lg text-gray-600 mb-4">
-              Universal Trade Solutions is a dynamic and innovative general trading company specializing in the procurement and distribution of high-quality agro products, particularly cocoa and vanilla. Our business model is focused on establishing a sustainable supply chain that links local farmers and cooperatives with global markets. 
+              Beans and Pods Trading is a dynamic and innovative general trading company specializing in the procurement and distribution of high-quality agro products, particularly cocoa and vanilla. Our business model is focused on establishing a sustainable supply chain that links local farmers and cooperatives with global markets. 
             </p>
             <p className="text-lg text-gray-600 mb-6">
               By utilizing our expertise in agricultural products, logistics, and international trade, we aim to provide premium products to our customers while enhancing the livelihoods of farmers and fostering the economic development of rural communities.

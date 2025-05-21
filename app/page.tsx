@@ -11,7 +11,7 @@ export default async function Home() {
     products.find(product => product.id === "spices-1")
   ].filter(Boolean); // Filter out any undefined values in case IDs don't match
 
-  const subtitle = "At Universal Trade Solutions, we specialize in the procurement and distribution of high-quality agro products, with a focus on cocoa and vanilla. Our sustainable supply chain bridges local farmers and cooperatives with international markets. By leveraging our expertise in agricultural products, logistics, and global trade, we deliver premium products to our customers while enhancing the livelihoods of farmers and contributing to the economic growth of rural communities."
+  const subtitle = "At Beans and Pods, we specialize in the procurement and distribution of high-quality agro products, with a focus on cocoa and vanilla. Our sustainable supply chain bridges local farmers and cooperatives with international markets. By leveraging our expertise in agricultural products, logistics, and global trade, we deliver premium products to our customers while enhancing the livelihoods of farmers and contributing to the economic growth of rural communities."
 
   return (
     <div className="flex flex-col gap-16 pb-16">

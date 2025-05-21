@@ -45,7 +45,9 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           <TabsList>
             <TabsTrigger value="description">Description</TabsTrigger>
             <TabsTrigger value="specifications">Specifications</TabsTrigger>
-            <TabsTrigger value="certifications">Certifications</TabsTrigger>
+            {product.certifications && product.certifications.length > 0 && (
+              <TabsTrigger value="certifications">Certifications</TabsTrigger>
+            )}
           </TabsList>
           <TabsContent value="description" className="mt-4">
             <div className="prose max-w-none">
