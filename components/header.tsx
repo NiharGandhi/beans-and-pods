@@ -5,10 +5,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Menu, ChevronDown } from "lucide-react"
+import { Menu } from "lucide-react"
 import Image from "next/image"
-import { productCategories } from "@/lib/constants"
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -18,6 +16,7 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+    { name: "Products", href: "/products" },
   ]
 
   return (
@@ -62,31 +61,7 @@ export default function Header() {
                       </Link>
                     ))}
 
-                    {/* Products dropdown for mobile */}
-                    <div className="space-y-2">
-                      <div className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900">
-                        Products
-                      </div>
-                      <div className="pl-4 space-y-2">
-                        {productCategories.map((category) => (
-                          <Link
-                            key={category.slug}
-                            href={`/products/${category.slug}`}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"
-                          >
-                            {category.name}
-                          </Link>
-                        ))}
-                        <Link
-                          href="/products"
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"
-                        >
-                          All Products
-                        </Link>
-                      </div>
-                    </div>
+                  
                   </div>
                   <div className="py-6">
                     <Link
@@ -115,29 +90,6 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-
-          {/* Products dropdown for desktop */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button
-                className={`flex items-center text-sm font-semibold leading-6 ${
-                  pathname.startsWith("/products") ? "text-primary" : "text-gray-900 hover:text-primary"
-                }`}
-              >
-                Products <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="center" className="w-48">
-              {productCategories.map((category) => (
-                <DropdownMenuItem key={category.slug} asChild>
-                  <Link href={`/products/${category.slug}`}>{category.name}</Link>
-                </DropdownMenuItem>
-              ))}
-              <DropdownMenuItem asChild>
-                <Link href="/products">All Products</Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
