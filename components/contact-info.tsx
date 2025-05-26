@@ -1,11 +1,48 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+"use client";
+
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+
+const contactItem = {
+  hidden: { opacity: 0, x: 10 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
 
 export function ContactInfo() {
   return (
-    <div className="space-y-8">
-      <div>
-        <h2 className="text-xl font-semibold mb-6">Contact Information</h2>
-        <div className="space-y-4">
+    <motion.div 
+      className="space-y-8"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+    >
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.1,
+              delayChildren: 0.4
+            }
+          }
+        }}
+      >
+        <motion.h2 
+          className="text-xl font-semibold mb-6"
+          variants={contactItem}
+        >
+          Contact Information
+        </motion.h2>
+        
+        <motion.div className="space-y-4" variants={contactItem}>
           <div className="flex items-start">
             <MapPin className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
@@ -49,12 +86,29 @@ export function ContactInfo() {
               </p>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div>
-        <h2 className="text-xl font-semibold mb-4">International Offices</h2>
-        <div className="space-y-4">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.1,
+              delayChildren: 0.6
+            }
+          }
+        }}
+      >
+        <motion.h2 
+          className="text-xl font-semibold mb-4"
+          variants={contactItem}
+        >
+          International Offices
+        </motion.h2>
+        
+        <motion.div className="space-y-4" variants={contactItem}>
           <div>
             <p className="font-medium">Europe</p>
             <p className="text-gray-600">
@@ -72,8 +126,8 @@ export function ContactInfo() {
               Singapore
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-  )
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
 }

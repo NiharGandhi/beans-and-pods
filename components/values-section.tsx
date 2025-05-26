@@ -1,11 +1,29 @@
-import { Shield, Globe, Users, TrendingUp, Box, Heart, Target } from "lucide-react"
+import { Shield, Globe, Users, TrendingUp, Box, Heart, Target } from "lucide-react";
+import { motion } from "framer-motion";
 
-interface Value {
-  id: string
-  title: string
-  description: string
-  icon: string
-}
+// Animation variants for values
+const valuesContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const valueItem = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 export function ValuesSection() {
   // If no values are provided, use default values
@@ -77,19 +95,30 @@ export function ValuesSection() {
   }
 
   return (
-    <section className="py-20 max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 rounded-2xl">
-      <div className="text-center mb-16">
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={valuesContainer}
+      className="py-20 max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 rounded-2xl"
+    >
+      <motion.div
+        className="text-center mb-16"
+        variants={valueItem}
+      >
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Business Objectives</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           Guiding principles that drive our success in the agro product trading industry
         </p>
-      </div>
-      
+      </motion.div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {displayValues.map((value) => (
-          <div 
-            key={value.id} 
-            className="group flex flex-col p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 h-full"
+          <motion.div
+            key={value.id}
+            variants={valueItem}
+            whileHover={{ y: -5 }}
+            className="group flex flex-col p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 h-full"
           >
             <div className="flex items-center mb-6">
               <div className="mr-5">
@@ -104,28 +133,35 @@ export function ValuesSection() {
             </div>
             <div className="space-y-3">
               {value.description.split('\n').map((point, index) => (
-                <p 
-                  key={index} 
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="text-gray-600 leading-relaxed flex items-start"
                 >
                   <span className="inline-block mr-2 mt-1 text-xs font-medium text-primary bg-primary/10 rounded-full px-2 py-0.5">
                     {index + 1}
                   </span>
                   {point.replace(/^\d+\.\s/, '')}
-                </p>
+                </motion.p>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-      
-      <div className="mt-16 text-center max-w-4xl mx-auto">
+
+      <motion.div
+        className="mt-16 text-center max-w-4xl mx-auto"
+        variants={valueItem}
+      >
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
           <p className="text-lg text-gray-700 italic">
-            "By adhering to these objectives, Universal Trade Solutions aims to become a leading name in the agro product trading industry, known for our commitment to quality, sustainability, and social responsibility."
+            "By adhering to these objectives, Beans and Pods aims to become a leading name in the agro product trading industry, known for our commitment to quality, sustainability, and social responsibility."
           </p>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }

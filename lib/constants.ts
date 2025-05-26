@@ -23,7 +23,6 @@ export const products = [
       "Moisture": "less than 3%",
       "Shell content": "less than 5%"
     },
-    "origin": "Madagascar / Uganda",
     "certifications": []
   },
   {
@@ -41,7 +40,6 @@ export const products = [
       "Shell content": "max. 1.75%",
       "Fineness (≤ 100 microns)": "96% - 99%"
     },
-    "origin": "Madagascar / Uganda",
     "certifications": []
   },
   {
@@ -57,7 +55,6 @@ export const products = [
       "Free fatty acids (oleic acid)": "≤ 1.5%",
       "Types": "non deodorized / deodorized"
     },
-    "origin": "Madagascar / Uganda",
     "certifications": []
   },
   {
@@ -76,7 +73,6 @@ export const products = [
       "Fineness (≤ 75 microns)": "min 99.0%",
       "Moisture": "5% max"
     },
-    "origin": "Madagascar / Uganda",
     "certifications": []
   },
   {
@@ -95,7 +91,6 @@ export const products = [
       "Fineness (≤ 75 microns)": "min 99.0%",
       "Moisture": "5% max"
     },
-    "origin": "Madagascar / Uganda",
     "certifications": []
   },
   {
@@ -254,7 +249,8 @@ export const products = [
       "Essential Oil": "1.8% (m/m) min",
       "Total Ash": "6",
       "Density": "500g/l min – 630g/l max",
-      "Mold": "1.105"
+      "Mold": "1.105",
+      "Shelf-life": "02 Years"
     },
     "origin": "Madagascar / Uganda",
     "certifications": []
