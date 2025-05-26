@@ -88,46 +88,6 @@ export function ContactInfo() {
           </div>
         </motion.div>
       </motion.div>
-
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.1,
-              delayChildren: 0.6
-            }
-          }
-        }}
-      >
-        <motion.h2 
-          className="text-xl font-semibold mb-4"
-          variants={contactItem}
-        >
-          International Offices
-        </motion.h2>
-        
-        <motion.div className="space-y-4" variants={contactItem}>
-          <div>
-            <p className="font-medium">Europe</p>
-            <p className="text-gray-600">
-              45 Commerce Road
-              <br />
-              Amsterdam, Netherlands
-            </p>
-          </div>
-
-          <div>
-            <p className="font-medium">Asia Pacific</p>
-            <p className="text-gray-600">
-              78 Trading Avenue
-              <br />
-              Singapore
-            </p>
-          </div>
-        </motion.div>
-      </motion.div>
     </motion.div>
   );
 }
