@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 
-interface Product {
+export interface Product {
   id: string
   name: string
   slug: string

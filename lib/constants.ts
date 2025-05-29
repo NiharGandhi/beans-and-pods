@@ -1,10 +1,10 @@
 // lib/constants.ts
 export const productCategories = [
-  { slug: 'cocoa-beans', name: 'Cocoa Beans' },
-  { slug: 'vanilla', name: 'Vanilla' },
-  { slug: 'spices', name: 'Spices' },
-  { slug: 'dry-beans', name: 'Dry Beans / Pulse' },
-  { slug: 'essential-oil', name: 'Essential Oil' }
+  { slug: 'cocoa-beans', name: 'Cocoa Beans', image: '/cocoa-nibs.webp', description: 'DESCRIPTION' },
+  { slug: 'vanilla', name: 'Vanilla', image: '/vanilla-cuts.png', description: 'DESCRIPTION' },
+  { slug: 'spices', name: 'Spices', image: '/black-pepper.jpg', description: '' },
+  { slug: 'dry-beans', name: 'Dry Beans / Pulse', image: '/black-eyed-bean.png', description: 'DESCRIPTION' },
+  { slug: 'essential-oil', name: 'Essential Oil', image: 'lavender-oil.jpg', description: 'DESCRIPTION' }
 ] as const;
 
 export type ProductCategory = typeof productCategories[number];
