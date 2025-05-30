@@ -2,6 +2,7 @@
 
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
+import { GoogleMapsEmbed } from '@next/third-parties/google'
 
 const contactItem = {
   hidden: { opacity: 0, x: 10 },
@@ -17,7 +18,7 @@ const contactItem = {
 
 export function ContactInfo() {
   return (
-    <motion.div 
+    <motion.div
       className="space-y-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -35,13 +36,13 @@ export function ContactInfo() {
           }
         }}
       >
-        <motion.h2 
+        <motion.h2
           className="text-xl font-semibold mb-6"
           variants={contactItem}
         >
           Contact Information
         </motion.h2>
-        
+
         <motion.div className="space-y-4" variants={contactItem}>
           <div className="flex items-start">
             <MapPin className="h-5 w-5 text-primary mt-1 mr-3" />
@@ -59,6 +60,15 @@ export function ContactInfo() {
             </div>
           </div>
 
+          {/* Add the Google Map here */}
+          <GoogleMapsEmbed
+            apiKey="AIzaSyAH7rxk8t744ay84rTINCbZ-JhczaHkkOA"
+            height={200}
+            width="100%"
+            mode="place"
+            q="Churchil+Tower,Dubai,UAE"
+          />
+
           <div className="flex items-start">
             <Phone className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
@@ -71,7 +81,7 @@ export function ContactInfo() {
             <Mail className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
               <p className="font-medium">Email</p>
-              <p className="text-gray-600">info@beansandpods.com</p>
+              <p className="text-gray-600">info@beansnpods.com</p>
             </div>
           </div>
 
