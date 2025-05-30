@@ -62,7 +62,7 @@ export function ContactInfo() {
 
           {/* Add the Google Map here */}
           <GoogleMapsEmbed
-            apiKey="AIzaSyAH7rxk8t744ay84rTINCbZ-JhczaHkkOA"
+            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
             height={200}
             width="100%"
             mode="place"
