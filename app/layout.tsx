@@ -10,7 +10,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Beans and Pods Trading Solutions",
   description: "Premium agricultural trading products for the B2B market",
-  generator: 'v0.dev'
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  }
 }
 
 export default function RootLayout({
@@ -20,6 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col">
           <Header />
