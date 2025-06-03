@@ -2,6 +2,7 @@
 export const productCategories = [
   { slug: 'cocoa-beans', name: 'Cocoa Beans', image: '/cocoa-nibs.webp', description: 'DESCRIPTION' },
   { slug: 'vanilla', name: 'Vanilla', image: '/vanilla-cuts.png', description: 'DESCRIPTION' },
+  { slug: 'coffee', name: 'Coffee', image: '/vanilla-cuts.png', description: 'DESCRIPTION' },
   { slug: 'spices', name: 'Spices', image: '/black-pepper.jpg', description: 'DESCRIPTION' },
   { slug: 'dry-beans', name: 'Dry Beans / Pulse', image: '/black-eyed-bean.png', description: 'DESCRIPTION' },
   { slug: 'essential-oil', name: 'Essential Oil', image: 'lavender-oil.jpg', description: 'DESCRIPTION' }
@@ -32,7 +33,7 @@ export const products = [
     "category": "cocoa-beans",
     "image": "/cocoa-mass.png?height=300&width=400",
     "shortDescription": "Pure cocoa mass for professional chocolate manufacturing",
-    "description": "This high-quality cocoa mass is produced from premium cocoa beans, offering a deep chocolate flavor profile. It's the perfect base ingredient for chocolate manufacturers looking to create premium products.",
+    "description": "Our Cocoa Mass, also known as Cocoa Liquor, is a rich, aromatic paste crafted from finely ground, roasted cocoa nibs. Sourced from the world’s most esteemed cocoa-growing regions, this pure, unsweetened product is the essence of chocolate in its most concentrated form. With its deep flavor profile, smooth texture, and high cocoa butter content, our cocoa mass is the preferred choice of master chocolatiers, luxury confectioners, and gourmet artisans seeking unmatched quality and depth in their creations.",
     "specifications": {
       "Fat content": "53% ± 2%",
       "Moisture": "max. 1.5%",
@@ -44,12 +45,12 @@ export const products = [
   },
   {
     "id": "cocoa-beans-3",
-    "name": "Cocoa Butter",
-    "slug": "cocoa-butter",
+    "name": "Natural Cocoa Butter",
+    "slug": "natural-cocoa-butter",
     "category": "cocoa-beans",
     "image": "/cocoa-butter.jpg?height=300&width=400",
     "shortDescription": "Pure, deodorized cocoa butter for chocolate and cosmetics",
-    "description": "Our premium cocoa butter is extracted from quality cocoa beans. It has a smooth texture and mild chocolate aroma, making it ideal for chocolate production, confectionery, and cosmetic applications.",
+    "description": "Our Natural Cocoa Butter is a silky, golden fat extracted from premium-grade cocoa beans, prized for its delicate chocolate aroma and velvety texture. Unrefined and minimally processed, it retains all the richness of its origin—making it a coveted ingredient in luxury skincare, artisanal chocolate, and high-end wellness formulations. With its exceptional emollient properties and naturally smooth finish, our cocoa butter embodies purity, indulgence, and timeless elegance.",
     "specifications": {
       "Color": "pale yellowish, slight brown",
       "Free fatty acids (oleic acid)": "≤ 1.5%",
@@ -59,12 +60,27 @@ export const products = [
   },
   {
     "id": "cocoa-beans-4",
+    "name": "Deodorized Cocoa Butter",
+    "slug": "deodorized-cocoa-butter",
+    "category": "cocoa-beans",
+    "image": "/cocoa-butter.jpg?height=300&width=400",
+    "shortDescription": "Pure, deodorized cocoa butter for chocolate and cosmetics",
+    "description": "Our Deodorized Cocoa Butter offers the same rich, nourishing qualities of natural cocoa butter but with a neutral aroma, making it the perfect choice for refined formulations where fragrance control is paramount. Carefully processed to remove its characteristic scent while preserving its creamy texture and moisturizing properties, this premium ingredient is ideal for high-end cosmetics, pharmaceuticals, and gourmet chocolate blends seeking subtlety and elegance.",
+    "specifications": {
+      "Color": "pale yellowish, slight brown",
+      "Free fatty acids (oleic acid)": "≤ 1.5%",
+      "Types": "non deodorized / deodorized"
+    },
+    "certifications": []
+  },
+  {
+    "id": "cocoa-beans-5",
     "name": "Natural Cocoa Powder",
     "slug": "natural-cocoa-powder",
     "category": "cocoa-beans",
     "image": "/natural-cocoa-powder.jpg?height=300&width=400",
     "shortDescription": "Non-alkalized cocoa powder with rich flavor and natural acidity",
-    "description": "This natural cocoa powder retains all the natural flavors and acidity of cocoa. It's perfect for baking applications where a robust chocolate flavor is desired.",
+    "description": "Natural Cocoa Powder is produced by finely grinding roasted cocoa beans after the extraction of cocoa butter. It retains the rich, intense chocolate flavor and deep color characteristic of premium cocoa. Free from alkalizing agents, our natural cocoa powder offers a slightly acidic profile, making it ideal for traditional baking, confectionery, and beverage applications. Sourced from trusted origins, it meets rigorous quality standards to ensure consistency and superior taste in every batch.",
     "specifications": {
       "Color": "light brown",
       "pH": "5.2 – 6.5",
@@ -76,13 +92,13 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "cocoa-beans-5",
+    "id": "cocoa-beans-6",
     "name": "Alkalized Cocoa Powder",
     "slug": "alkalized-cocoa-powder",
     "category": "cocoa-beans",
     "image": "/alkalized-cocoa-powder.png?height=300&width=400",
     "shortDescription": "Dutch-process cocoa powder with mellow flavor and dark color",
-    "description": "Our alkalized cocoa powder undergoes a Dutch process to neutralize acidity, resulting in a smoother flavor and darker color. Ideal for beverages, baking, and confectionery.",
+    "description": "Alkalized Cocoa Powder, also known as Dutch-processed cocoa, is treated with an alkalizing agent to neutralize its natural acidity. This process enhances its color, giving it a darker, richer hue, and produces a smoother, milder flavor profile. Ideal for premium baking, confectionery, and beverage applications, our alkalized cocoa powder delivers consistent quality and excellent solubility, meeting the demands of sophisticated recipes and high-end food products.",
     "specifications": {
       "Color": "brown, dark brown",
       "pH": "6.8 – 7.2",
@@ -240,7 +256,7 @@ export const products = [
     "category": "spices",
     "image": "/black-pepper.jpg?height=300&width=400",
     "shortDescription": "Premium quality black peppercorns",
-    "description": "Our black peppercorns are carefully selected for their size, aroma, and pungency. They offer a robust flavor perfect for culinary applications.",
+    "description": "Black Pepper, known as the “King of Spices,” is cherished worldwide for its sharp, pungent flavor and versatile culinary use. Sourced from premium plantations in key producing regions such as India, Vietnam, and Indonesia, our black pepper is carefully harvested and processed to preserve its rich aroma and robust heat. Ideal for food seasoning, spice blends, and industrial applications, our black pepper consistently delivers superior quality and flavor integrity.",
     "specifications": {
       "Type": "Conventional",
       "Quality / Grade": "550G/L",
@@ -262,7 +278,7 @@ export const products = [
     "category": "spices",
     "image": "/pink-pepper.jpg?height=300&width=400",
     "shortDescription": "Delicate pink peppercorns with mild flavor",
-    "description": "These pink peppercorns offer a milder, fruitier flavor than traditional black pepper, with a beautiful color that enhances presentation.",
+    "description": "Pink Peppercorns are vibrant, aromatic berries known for their delicate, fruity, and slightly sweet flavor with subtle peppery notes. Sourced primarily from the berries of the Brazilian pepper tree or Peruvian pepper tree, our pink pepper is carefully harvested to ensure freshness and vibrant color. Ideal for gourmet culinary use, specialty spice blends, and artisanal products, pink pepper adds an elegant and unique twist to a wide range of flavor profiles.",
     "specifications": {
       "Product Identification": "Pink Pepper",
       "Type": "Conventional",
@@ -279,7 +295,7 @@ export const products = [
     "category": "spices",
     "image": "/cloves.jpg?height=300&width=400",
     "shortDescription": "Aromatic whole cloves",
-    "description": "Our cloves are hand-picked for their size and oil content, offering an intense aroma and flavor perfect for both sweet and savory dishes.",
+    "description": "Cloves are aromatic flower buds prized for their intense, warm, and sweet-spicy flavor. Harvested from clove trees in top-producing regions such as Indonesia, Madagascar, and Sri Lanka, our cloves are carefully dried to preserve their essential oils and potent aroma. Widely used in culinary applications, traditional medicine, and fragrance industries, our premium cloves offer consistent quality and a distinctive flavor profile that elevates both gourmet dishes and natural wellness products.",
     "specifications": {
       "Product Identification": "Cloves",
       "Type": "Conventional",
@@ -295,7 +311,7 @@ export const products = [
     "category": "spices",
     "image": "/cardamon.jpg?height=300&width=400",
     "shortDescription": "Fragrant green cardamom pods",
-    "description": "These premium green cardamom pods contain small black seeds with a complex, citrusy flavor and intense aroma.",
+    "description": "Cardamom, often referred to as the “Queen of Spices,” is celebrated for its unique, sweet, and aromatic flavor with hints of citrus and eucalyptus. Sourced from premier growing regions such as Guatemala, India, and Sri Lanka, our cardamom is carefully harvested and processed to retain its vibrant aroma and superior quality. Widely used in culinary, beverage, and perfumery industries, our premium cardamom adds a luxurious and exotic touch to both traditional and contemporary products.",
     "specifications": {
       "Product Identification": "Cardamom",
       "Type": "Conventional",
@@ -499,6 +515,34 @@ export const products = [
       "Type": "Essential Oil"
     },
     "origin": "Madagascar / Uganda",
+    "certifications": []
+  },
+  {
+    "id": "coffee-1",
+    "name": "Arabica Coffee",
+    "slug": "arabica-coffee",
+    "category": "coffee",
+    "image": "/rossmary-oil.jpg?height=300&width=400",
+    "shortDescription": "Premium Arabica coffee beans for gourmet blends",
+    "description": "Arabica coffee is renowned worldwide for its smooth, nuanced flavor and aromatic complexity. Grown primarily at higher altitudes in regions such as Latin America, East Africa, and parts of Asia, Arabica beans offer a delicate balance of sweetness, acidity, and body. Valued by specialty coffee roasters and connoisseurs alike, our Arabica coffee beans are carefully sourced and selected to ensure premium quality, consistency, and a superior cup experience.",
+    "specifications": {
+      
+    },
+    "origin": "",
+    "certifications": []
+  },
+  {
+    "id": "coffee-2",
+    "name": "Robusta Coffee",
+    "slug": "robusta-coffee",
+    "category": "coffee",
+    "image": "/rossmary-oil.jpg?height=300&width=400",
+    "shortDescription": "Premium Arabica coffee beans for gourmet blends",
+    "description": "Robusta coffee beans are known for their bold, robust flavor and higher caffeine content compared to Arabica. Typically grown at lower altitudes in regions like West Africa, Southeast Asia, and parts of Brazil, Robusta offers a strong, earthy taste with a characteristic bitterness and fuller body. Widely used in espresso blends and instant coffee production, our Robusta beans are carefully sourced to ensure consistent quality and performance for a range of commercial and specialty applications.",
+    "specifications": {
+      
+    },
+    "origin": "",
     "certifications": []
   }
 ];
