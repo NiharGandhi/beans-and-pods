@@ -201,12 +201,12 @@ export const products = [
   },
   {
     "id": "vanilla-6",
-    "name": "Ground Vanilla Powder",
-    "slug": "ground-vanilla-powder",
+    "name": "Natural Vanilla Powder",
+    "slug": "natural-vanilla-powder",
     "category": "vanilla",
     "image": "/ground-vanilla-powder.png?height=300&width=400",
     "shortDescription": "Fine vanilla powder for easy incorporation",
-    "description": "This ground vanilla powder offers all the flavor of vanilla beans in a convenient, easy-to-use form. Perfect for baking and flavoring applications.",
+    "description": "Natural Vanilla Powder is finely ground from high-quality cured vanilla beans, preserving the rich aroma and complex flavor of pure vanilla in a convenient powdered form. Ideal for use in baking, confectionery, beverages, and premium food products, this powder delivers consistent flavor intensity and ease of incorporation without the moisture of whole beans or extracts. Our natural vanilla powder is free from artificial additives, ensuring an authentic, clean vanilla experience for artisanal and industrial applications alike.",
     "specifications": {
       "Moisture": "9% to 10%",
       "Vanillin Content": "1.2 to 1.5%",
@@ -236,12 +236,12 @@ export const products = [
   },
   {
     "id": "vanilla-8",
-    "name": "Vanilla Oleoresin",
-    "slug": "vanilla-oreseon",
+    "name": "Non Alcoholic Vanilla Extract",
+    "slug": "non-alcoholic-vanilla-extract",
     "category": "vanilla",
     "image": "/vanilla-oreseon.png?height=300&width=400",
     "shortDescription": "Concentrated vanilla flavor in oil-soluble form",
-    "description": "This vanilla oleoresin is a concentrated form of vanilla flavor that's oil-soluble, making it ideal for certain food and cosmetic applications.",
+    "description": "Our Non-Alcoholic Vanilla Extract offers the pure, rich flavor of vanilla without the use of alcohol as a solvent. Extracted using alternative methods such as glycerin or water-based processes, this extract retains the natural aroma and complexity of premium vanilla beans. Ideal for food products, beverages, and applications with alcohol restrictions, it provides a versatile and clean vanilla flavor solution while meeting the needs of diverse markets including natural, organic, and specialty sectors.",
     "specifications": {
       "Type": "100% Pure and Natural",
       "Shelf-life": "02 Years"
@@ -522,7 +522,7 @@ export const products = [
     "name": "Arabica Coffee",
     "slug": "arabica-coffee",
     "category": "coffee",
-    "image": "/rossmary-oil.jpg?height=300&width=400",
+    "image": "/arabica-coffee.webp?height=300&width=400",
     "shortDescription": "Premium Arabica coffee beans for gourmet blends",
     "description": "Arabica coffee is renowned worldwide for its smooth, nuanced flavor and aromatic complexity. Grown primarily at higher altitudes in regions such as Latin America, East Africa, and parts of Asia, Arabica beans offer a delicate balance of sweetness, acidity, and body. Valued by specialty coffee roasters and connoisseurs alike, our Arabica coffee beans are carefully sourced and selected to ensure premium quality, consistency, and a superior cup experience.",
     "specifications": {
@@ -536,8 +536,8 @@ export const products = [
     "name": "Robusta Coffee",
     "slug": "robusta-coffee",
     "category": "coffee",
-    "image": "/rossmary-oil.jpg?height=300&width=400",
-    "shortDescription": "Premium Arabica coffee beans for gourmet blends",
+    "image": "/robusta-coffee.jpeg?height=300&width=400",
+    "shortDescription": "Premium Robusta coffee beans for gourmet blends",
     "description": "Robusta coffee beans are known for their bold, robust flavor and higher caffeine content compared to Arabica. Typically grown at lower altitudes in regions like West Africa, Southeast Asia, and parts of Brazil, Robusta offers a strong, earthy taste with a characteristic bitterness and fuller body. Widely used in espresso blends and instant coffee production, our Robusta beans are carefully sourced to ensure consistent quality and performance for a range of commercial and specialty applications.",
     "specifications": {
       
