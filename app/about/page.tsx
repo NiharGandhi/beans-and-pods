@@ -49,41 +49,50 @@ export default function AboutPage() {
     >
       <motion.div variants={item}>
         <PageHeader
-          title={"About Beans and Pods Trading"}
-          description={"A trusted partner in agricultural trading for over 15 years"}
+          title={"About Us - Beans & Pods"}
+          description={"Empowering Global Agro Trade through Ethical Partnerships"}
         />
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-12 my-16 items-center"
         variants={container}
       >
         <motion.div variants={item}>
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold mb-6"
             variants={fadeIn}
           >
             Our Story
           </motion.h2>
+          <motion.h3
+            className="font-semibold mb-4"
+          >
+            Rooted in Agriculture. Driven by Impact.
+          </motion.h3>
           <div className="prose max-w-none">
-            <motion.p 
+            <motion.p
               className="text-lg text-gray-700 mb-4"
               variants={fadeIn}
             >
-              {"Beans & Pods is a dynamic and innovative general trading company specializing in the procurement and distribution of high-quality agro products, particularly cocoa and vanilla. Our business model is focused on establishing a sustainable supply chain that links local farmers and cooperatives with global markets."}
+              <strong>Beans & Pods</strong> is a dynamic and forward-thinking general trading company, specializing in the procurement and distribution of high-quality <strong>Agro Commodities</strong> — with a strong focus on <strong>Agro Commodities</strong>.
             </motion.p>
-            <motion.p 
+            <motion.p
+              className="text-lg text-gray-700 mb-4"
+              variants={fadeIn}
+            >
+              Our business model is built around a <strong>sustainable supply chain</strong> that connects <strong>local farmers and cooperatives</strong> with buyers in global markets. Through direct sourcing and long-term partnerships, we ensure product integrity while uplifting rural economies.
+            </motion.p>
+            <motion.p
               className="text-lg text-gray-700"
               variants={fadeIn}
             >
-              {
-                "By leveraging our expertise in agricultural products, logistics, and international trade, we aim to deliver premium products to our customers while supporting the livelihoods of farmers and contributing to the economic development of rural communities."
-              }
+              By leveraging our expertise in <strong>agricultural products, logistics, and international trade,</strong> we aim to deliver <strong>premium products</strong> to our customers — all while improving farmer livelihoods and contributing to the <strong>economic development of farming communities</strong> across Africa and beyond.
             </motion.p>
           </div>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="relative h-[400px] rounded-lg overflow-hidden"
           variants={item}
           whileHover={{ scale: 1.02 }}
@@ -98,8 +107,25 @@ export default function AboutPage() {
         </motion.div>
       </motion.div>
 
+      <motion.div
+        className="my-16"
+        variants={item}
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.3 }}
+      >
+        <motion.h2 className="text-3xl font-bold mb-6">
+          Our Trading Facility
+        </motion.h2>
+        <motion.p className="text-lg text-gray-700 mb-4">
+          Our facility is strategically designed to support the end-to-end handling of agro products. From <strong>quality control and packaging to logistics coordination,</strong> it serves as a central hub that enables us to <strong>streamline operations, maintain product integrity,</strong> and respond quickly to market demands.
+        </motion.p>
+      </motion.div>
+
       <motion.div variants={item}>
         <ValuesSection />
+      </motion.div>
+      <motion.div variants={item}>
+        <TeamSection />
       </motion.div>
     </motion.div>
   );

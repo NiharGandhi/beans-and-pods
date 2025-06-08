@@ -7,11 +7,9 @@ import Image from "next/image"
 
 interface HeroSectionProps {
   title: string
-  subtitle?: string
-  description: string
 }
 
-export function HeroSection({ title, subtitle, description }: HeroSectionProps) {
+export function HeroSection({ title }: HeroSectionProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,10 +81,12 @@ export function HeroSection({ title, subtitle, description }: HeroSectionProps) 
             {title}
           </motion.h1>
           <motion.h2 className="text-white mb-8" variants={itemVariants}>
-            {subtitle}
+            At <span className="font-bold">Beans & Pods</span>, we are dedicated to sourcing and distributing the finest agro commodities — with a special focus on Cocoa and Vanilla. Our mission is to create a seamless, sustainable bridge between local farmers and global markets.
+            <br />
+            Through strong partnerships with farming communities, cooperatives, and logistics networks, we ensure that every product we deliver meets the highest standards of <strong>quality, traceability, and ethical sourcing</strong>.
           </motion.h2>
           <motion.p className="mt-6 text-lg leading-8 text-gray-300" variants={itemVariants}>
-            {description}
+            We proudly supply premium <strong>beans, pods, and agricultural products</strong> to businesses around the world — supporting rural economies, promoting fair trade, and contributing to a more connected and sustainable global food system.
           </motion.p>
           <motion.div
             className="mt-10 flex items-center justify-center gap-x-6"

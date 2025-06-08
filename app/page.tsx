@@ -10,8 +10,6 @@ export default async function Home() {
     <div className="flex flex-col gap-16 pb-16">
       <HeroSection
         title={"Empowering Global Agro Trade"}
-        subtitle={subtitle}
-        description={"Supplying high-quality beans, pods, and agricultural products to businesses worldwide"}
       />
       <FeaturedProducts />
       <AboutPreview />

@@ -31,43 +31,43 @@ export function ValuesSection() {
     {
       id: "1",
       title: "Quality & Consistency",
-      description: "1. Ensure the supply of high-quality cocoa and vanilla products by implementing stringent quality control measures from sourcing to delivery.\n2. Establish long-term relationships with reliable suppliers and farmers to maintain product consistency.",
+      description: "1. Implement strict quality control measures from sourcing to delivery.\n2. Foster long-term relationships with trusted farmers and cooperatives to ensure product uniformity and reliability.",
       icon: "shield",
     },
     {
       id: "2",
       title: "Sustainable Practices",
-      description: "1. Promote sustainable farming practices among our suppliers to ensure environmental responsibility and long-term viability of the agro products.\n2. Implement fair trade principles to ensure that farmers receive fair compensation for their products, contributing to their economic well-being.",
+      description: "1. Promote environmentally responsible farming through training and support.\n2. Uphold fair trade principles, ensuring farmers receive fair compensation and stable incomes.",
       icon: "globe",
     },
     {
       id: "3",
       title: "Market Expansion",
-      description: "1. Develop a strong presence in both domestic and international markets, focusing on key regions known for high demand for cocoa and vanilla.\n2. Expand our customer base by targeting wholesalers, retailers, and manufacturers in the food, cosmetics, and pharmaceutical industries.",
+      description: "1. Build a strong presence in high-demand regions across domestic and international markets.\n2. Target wholesalers, retailers, and manufacturers in the food, cosmetics, and pharmaceutical industries.",
       icon: "users",
     },
     {
       id: "4",
       title: "Operational Excellence",
-      description: "1. Optimize our supply chain operations to enhance efficiency, reduce costs, and ensure timely delivery of products to our customers.\n2. Invest in advanced logistics and warehousing solutions to manage inventory effectively and meet market demands promptly.",
+      description: "1. Optimize our supply chain to reduce costs, improve efficiency, and ensure timely delivery.\n2. Invest in advanced logistics and warehousing systems to effectively manage inventory and distribution.",
       icon: "trending-up",
     },
     {
       id: "5",
       title: "Customer Satisfaction",
-      description: "1. Provide exceptional customer service by understanding and meeting the unique needs of each client.\n2. Offer customized solutions, such as tailored product packaging and private labeling, to enhance customer satisfaction and loyalty.",
+      description: "1. Deliver tailored customer service by understanding and meeting specific client needs.\n2. Offer flexible solutions such as custom packaging, private labeling, and bespoke sourcing.",
       icon: "heart",
     },
     {
       id: "6",
       title: "Innovation & Adaptation",
-      description: "1. Stay abreast of industry trends and innovations to continuously improve our product offerings and business processes.\n2. Adapt to market changes and emerging opportunities by being flexible and responsive in our business strategies.",
+      description: "1. Stay ahead of industry trends to enhance our product range and operational strategies.\n2. Embrace flexibility to adapt to market dynamics and emerging global opportunities.",
       icon: "target",
     },
     {
       id: "7",
       title: "Community Engagement",
-      description: "1. Engage with local communities and support social initiatives that improve the quality of life for farmers and their families.\n2. Foster partnerships with NGOs and governmental organizations to promote education, healthcare, and infrastructure development in farming regions.",
+      description: "1. Invest in the well-being of farming communities through education, healthcare, and infrastructure support.\n2. Partner with NGOs and government bodies to implement social development initiatives in sourcing regions.",
       icon: "box",
     }
   ]
@@ -108,7 +108,7 @@ export function ValuesSection() {
       >
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Business Objectives</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Guiding principles that drive our success in the agro product trading industry
+          Guiding Principles That Drive Our Success
         </p>
       </motion.div>
 
@@ -151,8 +151,8 @@ export function ValuesSection() {
           </motion.div>
         ))}
       </div>
-
-      <motion.div
+      
+      {/* <motion.div
         className="mt-16 text-center max-w-4xl mx-auto"
         variants={valueItem}
       >
@@ -161,7 +161,7 @@ export function ValuesSection() {
             "By adhering to these objectives, Beans and Pods aims to become a leading name in the agro product trading industry, known for our commitment to quality, sustainability, and social responsibility."
           </p>
         </div>
-      </motion.div>
+      </motion.div> */}
     </motion.section>
   )
 }

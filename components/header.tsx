@@ -17,7 +17,7 @@ export default function Header() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 1500) // Adjust timing as needed
+    }, 2500) // Adjust timing as needed
 
     return () => clearTimeout(timer)
   }, [])
@@ -46,8 +46,7 @@ export default function Header() {
               transition={{ duration: 0.5 }}
               className="flex items-center"
             >
-              <Image src={"/logo.png"} height={120} width={120} alt="" />
-              <span className="ml-4 text-2xl font-semibold text-gray-900">Beans & Pods</span>
+              <Image src={"/B&P_logo.png"} height={400} width={400} alt="" />
             </motion.div>
           </motion.div>
         )}
