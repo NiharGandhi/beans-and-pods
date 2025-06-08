@@ -1,5 +1,4 @@
 import { PageHeader } from "@/components/page-header"
-import { ProductGrid } from "@/components/product-grid"
 import { CategoryTabs } from "@/components/category-tabs"
 import { getProducts } from "@/lib/redis"
 import { AllProducts } from "@/components/all-products"

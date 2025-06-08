@@ -55,7 +55,7 @@ export function HeroSection({ title }: HeroSectionProps) {
         animate="visible"
       >
         <Image
-          src="/hero.jpg?height=800&width=1920"
+          src="/pages/hero.png?height=800&width=1920"
           alt="Agricultural field"
           fill
           className="h-full w-full object-cover object-center"

@@ -14,7 +14,7 @@ export function CategoryTabs({ currentCategory }: CategoryTabsProps) {
           currentCategory === "all" ? "bg-primary text-white" : "text-gray-700 hover:bg-gray-100"
         }`}
       >
-        All Products
+        Product Categories
       </Link>
 
       {productCategories.map((category) => (
