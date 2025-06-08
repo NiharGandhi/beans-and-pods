@@ -46,7 +46,7 @@ export default function Header() {
               transition={{ duration: 0.5 }}
               className="flex items-center"
             >
-              <Image src={"/B&P_logo.png"} height={400} width={400} alt="" />
+              <Image src={"/pages/flash.png"} height={400} width={400} alt="" />
             </motion.div>
           </motion.div>
         )}
