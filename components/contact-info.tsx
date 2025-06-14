@@ -80,7 +80,7 @@ export function ContactInfo() {
             <BsWhatsapp className="h-5 w-5 text-primary mt-1 mr-3"/>
             <div>
               <p className="font-medium">WhatsApp</p>
-              <p className="text-gray-600">+971 4 552 1464</p>
+              <p className="text-gray-600">+971 50 481 2613</p>
             </div>
           </div>
 
