@@ -88,7 +88,7 @@ export function ContactInfo() {
             <Mail className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
               <p className="font-medium">Email</p>
-              <p className="text-gray-600">info@beansandpods.com</p>
+              <p className="text-gray-600">info@beansnpods.com</p>
             </div>
           </div>
         </motion.div>
