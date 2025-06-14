@@ -40,14 +40,9 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/products" className="text-sm leading-6 text-gray-300 hover:text-white">
-                  All Products
-                </Link>
-              </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
             <ul role="list" className="mt-6 space-y-4">
               <li>
@@ -61,12 +56,12 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-6 py-6 md:flex md:items-center md:justify-between lg:px-8 border-t border-white/10">
-        <div className="flex justify-center space-x-6 md:order-2">
+        {/* <div className="flex justify-center space-x-6 md:order-2">
           <Link href="#" className="text-gray-400 hover:text-gray-300">
             <span className="sr-only">Facebook</span>
             <Facebook className="h-5 w-5" />
@@ -83,10 +78,10 @@ export default function Footer() {
             <span className="sr-only">LinkedIn</span>
             <Linkedin className="h-5 w-5" />
           </Link>
-        </div>
+        </div> */}
         <div className="mt-8 md:order-1 md:mt-0">
           <p className="text-center text-xs leading-5 text-gray-400">
-            &copy; {new Date().getFullYear()} Beans and Pods Trading Solutions. All rights reserved.
+            &copy; {new Date().getFullYear()} Beans & Pods Trading Solutions. All rights reserved.
           </p>
         </div>
       </div>
