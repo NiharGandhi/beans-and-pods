@@ -62,10 +62,10 @@ export default function Header() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Beans and Pods Trading</span>
+              {/* <span className="sr-only">Beans and Pods Trading</span> */}
               <div className="flex items-center">
-                <Image src={"/logo.png"} height={50} width={50} alt="" />
-                <span className="ml-2 text-lg font-semibold text-gray-900">Beans & Pods</span>
+                <Image src={"/logo.png"} height={150} width={150} alt="" />
+                {/* <span className="ml-2 text-lg font-semibold text-gray-900">Beans & Pods</span> */}
               </div>
             </Link>
           </div>

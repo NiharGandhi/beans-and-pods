@@ -65,7 +65,7 @@ export function AboutPreview() {
           variants={imageAnim}
         >
           <Image
-            src="/about.jpg?height=400&width=600"
+            src="/pages/about.jpg?height=400&width=600"
             alt="About Beans and Pods Trading"
             fill
             className="object-cover hover:scale-105 transition-transform duration-500"

@@ -3,6 +3,7 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { GoogleMapsEmbed } from '@next/third-parties/google'
+import { BsWhatsapp } from "react-icons/bs";
 
 const contactItem = {
   hidden: { opacity: 0, x: 10 },
@@ -49,13 +50,11 @@ export function ContactInfo() {
             <div>
               <p className="font-medium">Address</p>
               <p className="text-gray-600">
-                123 Trading Street
+                Office 2812, Churchill Tower,
                 <br />
-                Business District
+                Marasi Drive, Business Bay, 
                 <br />
-                New York, NY 10001
-                <br />
-                United States
+                Dubai, UAE.
               </p>
             </div>
           </div>
@@ -73,7 +72,15 @@ export function ContactInfo() {
             <Phone className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
               <p className="font-medium">Phone</p>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
+              <p className="text-gray-600">+971 4 552 1464</p>
+            </div>
+          </div>
+
+          <div className="flex items-start">
+            <BsWhatsapp className="h-5 w-5 text-primary mt-1 mr-3"/>
+            <div>
+              <p className="font-medium">WhatsApp</p>
+              <p className="text-gray-600">+971 4 552 1464</p>
             </div>
           </div>
 
@@ -81,19 +88,7 @@ export function ContactInfo() {
             <Mail className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
               <p className="font-medium">Email</p>
-              <p className="text-gray-600">info@beansnpods.com</p>
-            </div>
-          </div>
-
-          <div className="flex items-start">
-            <Clock className="h-5 w-5 text-primary mt-1 mr-3" />
-            <div>
-              <p className="font-medium">Business Hours</p>
-              <p className="text-gray-600">
-                Monday - Friday: 9:00 AM - 5:00 PM EST
-                <br />
-                Saturday - Sunday: Closed
-              </p>
+              <p className="text-gray-600">info@beansandpods.com</p>
             </div>
           </div>
         </motion.div>

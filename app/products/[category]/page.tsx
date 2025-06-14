@@ -32,10 +32,10 @@ const categoryDescriptions = {
 const categoryBackgrounds = {
   'cocoa-beans': '/product_header/cocoa.jpg',
   'vanilla': '/product_header/vanilla.jpeg',
-  'coffee': '/product_header/vanilla.jpeg',
+  'coffee': '/product_header/coffee.jpg',
   'spices': '/product_header/spices.jpg',
-  'dry-beans': '/product_header/vanilla.jpeg',
-  'essential-oil': '/product_header/vanilla.jpeg'
+  'dry-beans': '/product_header/grains_and_pulses.webp',
+  'essential-oil': '/product_header/essential_oils.jpg'
 };
 
 export default function CategoryPage({ params }: { params: { category: string } }) {

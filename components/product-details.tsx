@@ -11,7 +11,7 @@ interface Product {
   image: string
   shortDescription: string
   description: string
-  specifications?: Record<string, string>
+  specifications?: Record<string, string | undefined>
   origin?: string
   certifications?: string[]
 }
@@ -29,6 +29,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           alt={product.name}
           fill
           className="object-cover"
+          priority
         />
       </div>
 
@@ -38,7 +39,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           <p className="text-sm text-gray-500 mb-4">
             Category: {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
           </p>
-          <p className="text-lg">{product.shortDescription}</p>
+          <p className="text-lg text-gray-700">{product.shortDescription}</p>
         </div>
 
         <Tabs defaultValue="description" className="mb-8">
@@ -49,48 +50,63 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <TabsTrigger value="certifications">Certifications</TabsTrigger>
             )}
           </TabsList>
+          
           <TabsContent value="description" className="mt-4">
-            <div className="prose max-w-none">
-              <p>{product.description || "Detailed product description not available."}</p>
+            <div className="prose max-w-none text-gray-700">
+              {product.description ? (
+                product.description.split('\n').map((paragraph, index) => (
+                  <p key={index} className="mb-4">{paragraph}</p>
+                ))
+              ) : (
+                <p>Detailed product description not available.</p>
+              )}
             </div>
           </TabsContent>
+          
           <TabsContent value="specifications" className="mt-4">
             {product.specifications ? (
-              <div className="grid grid-cols-2 gap-2">
-                {Object.entries(product.specifications).map(([key, value]) => (
-                  <div key={key} className="py-2">
-                    <span className="font-medium">{key}: </span>
-                    <span>{value}</span>
-                  </div>
-                ))}
+              <div className="space-y-3">
+                {Object.entries(product.specifications)
+                  .filter(([_, value]) => value)
+                  .map(([key, value]) => (
+                    <div key={key} className="flex gap-2">
+                      <span className="font-medium text-gray-700 min-w-[160px]">{key}:</span>
+                      <span className="text-gray-600">{value}</span>
+                    </div>
+                  ))}
               </div>
             ) : (
-              <p>Specifications not available for this product.</p>
+              <p className="text-gray-600">Specifications not available for this product.</p>
             )}
 
             {product.origin && (
-              <div className="mt-4">
-                <span className="font-medium">Origin: </span>
-                <span>{product.origin}</span>
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <div className="flex gap-2">
+                  <span className="font-medium text-gray-700 min-w-[160px]">Origin:</span>
+                  <span className="text-gray-600">{product.origin}</span>
+                </div>
               </div>
             )}
           </TabsContent>
+          
           <TabsContent value="certifications" className="mt-4">
             {product.certifications && product.certifications.length > 0 ? (
-              <ul className="list-disc pl-5 space-y-2">
+              <ul className="space-y-2">
                 {product.certifications.map((cert, index) => (
-                  <li key={index}>{cert}</li>
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="text-gray-600">{cert}</span>
+                  </li>
                 ))}
               </ul>
             ) : (
-              <p>Certification information not available for this product.</p>
+              <p className="text-gray-600">Certification information not available for this product.</p>
             )}
           </TabsContent>
         </Tabs>
 
         <div className="flex flex-col sm:flex-row gap-4">
           <Button asChild size="lg">
-            <Link href="/contact?product=${product.slug}">Request Quote</Link>
+            <Link href={`/contact?product=${product.slug}`}>Request Quote</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link href="/contact">Ask a Question</Link>
