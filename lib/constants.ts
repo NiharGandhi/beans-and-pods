@@ -1,11 +1,11 @@
 // lib/constants.ts
 export const productCategories = [
-  { slug: 'cocoa-beans', name: 'Cocoa', image: '/product_categories/cocoa.jpg', description: '' },
-  { slug: 'vanilla', name: 'Vanilla', image: '/product_categories/vanilla.jpg', description: '' },
-  { slug: 'coffee', name: 'Coffee', image: '/product_categories/coffee.jpg', description: '' },
-  { slug: 'spices', name: 'Spices', image: '/product_categories/spices.jpg', description: '' },
-  { slug: 'dry-beans', name: 'Grains and Pulses', image: '/product_categories/grains_and_pulses.jpg', description: '' },
-  { slug: 'essential-oil', name: 'Essential Oil', image: '/product_categories/essential_oil.jpg', description: '' }
+  { slug: 'cocoa-beans', name: 'Cocoa', image: '/product_categories/cocoa.webp', description: '' },
+  { slug: 'vanilla', name: 'Vanilla', image: '/product_categories/vanilla.webp', description: '' },
+  { slug: 'coffee', name: 'Coffee', image: '/product_categories/coffee.webp', description: '' },
+  { slug: 'spices', name: 'Spices', image: '/product_categories/spices.webp', description: '' },
+  { slug: 'dry-beans', name: 'Grains and Pulses', image: '/product_categories/grains_and_pulses.webp', description: '' },
+  { slug: 'essential-oil', name: 'Essential Oil', image: '/product_categories/essential_oil.webp', description: '' }
 ] as const;
 
 export type ProductCategory = typeof productCategories[number];

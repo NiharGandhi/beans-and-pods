@@ -99,7 +99,7 @@ export default function AboutPage() {
           transition={{ duration: 0.3 }}
         >
           <Image
-            src="/pages/about2.jpg?height=400&width=600"
+            src="/pages/about2.webp?height=400&width=600"
             alt="Beans and Pods Trading facility"
             fill
             className="object-cover hover:scale-105 transition-transform duration-500"
