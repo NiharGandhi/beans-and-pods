@@ -65,13 +65,13 @@ export function HeroSection({ title }: HeroSectionProps) {
       </motion.div>
 
       <motion.div
-        className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40"
+        className="mx-auto max-w-7xl px-6 py-12 md:py-24 lg:px-8 lg:py-40"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
         <div className="mx-auto max-w-3xl text-center">
-          <motion.h1 className="text-3xl my-4 tracking-tight text-white" variants={itemVariants}>
+          <motion.h1 className="text-3xl md:my-4 tracking-tight text-white" variants={itemVariants}>
             Welcome to Beans & Pods
           </motion.h1>
           <motion.h1
