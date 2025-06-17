@@ -32,7 +32,7 @@ export function FeaturedProducts() {
       name: "Vanilla",
       slug: "vanilla",
       category: "Vanilla",
-      image: "/product_categories/vanilla.jpg?height=300&width=400",
+      image: "/product_categories/vanilla.webp?height=300&width=400",
       shortDescription: "One of the world's most prized spices with rich, sweet flavor.",
       fullDescription: "Vanilla is derived from the cured beans of the Vanilla planifolia orchid. Native to Mexico and now cultivated in tropical regions, it's cherished for its rich, sweet flavor and fragrant aroma.",
     },
