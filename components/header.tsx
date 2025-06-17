@@ -24,7 +24,7 @@ export default function Header() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },   
+    { name: "About", href: "/about" },
     { name: "Products", href: "/products" },
     { name: "Contact", href: "/contact" },
   ]
@@ -34,8 +34,8 @@ export default function Header() {
       {/* Initial Load Animation */}
       <AnimatePresence>
         {isLoading && (
-          <motion.div 
-            className="fixed inset-0 flex items-center justify-center bg-white z-50"
+          <motion.div
+            className="fixed inset-0 flex items-center justify-center bg-[#bb9f87] z-50"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
@@ -46,14 +46,14 @@ export default function Header() {
               transition={{ duration: 0.5 }}
               className="flex items-center"
             >
-              <Image src={"/pages/flash.png"} height={400} width={400} alt="" />
+              <Image src={"/monogram.png"} height={700} width={700} alt="" />
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Main Header */}
-      <motion.header 
+      <motion.header
         className="bg-white border-b"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -92,9 +92,8 @@ export default function Header() {
                           key={item.name}
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
-                            pathname === item.href ? "text-primary" : "text-gray-900 hover:bg-gray-50"
-                          }`}
+                          className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${pathname === item.href ? "text-primary" : "text-gray-900 hover:bg-gray-50"
+                            }`}
                         >
                           {item.name}
                         </Link>
@@ -120,9 +119,8 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-semibold leading-6 ${
-                  pathname === item.href ? "text-primary" : "text-gray-900 hover:text-primary"
-                }`}
+                className={`text-sm font-semibold leading-6 ${pathname === item.href ? "text-primary" : "text-gray-900 hover:text-primary"
+                  }`}
               >
                 {item.name}
               </Link>
