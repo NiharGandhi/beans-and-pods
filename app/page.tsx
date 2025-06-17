@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col gap-16 pb-16">
       <HeroSection
-        title={"Empowering Global Agro Trade"}
+        title={"Where Excellence Begins - In Every Harvest"}
       />
       <FeaturedProducts />
       <AboutPreview />

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export function TeamSection() {
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -35,40 +34,62 @@ export function TeamSection() {
           <div className="bg-primary h-1 w-20 mx-auto"></div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-white rounded-xl shadow-md p-8 md:p-12 max-w-5xl mx-auto"
-        >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            At Beans & Pods, our strength lies in our people.
-          </h3>
-          <p className="text-gray-600 mb-4">
-            We are a team of passionate professionals with deep-rooted expertise
-            in agriculture, supply chain management, international trade, and
-            sustainable development.
-          </p>
-          <p className="text-gray-600 mb-4">
-            Our diverse backgrounds and shared vision empower us to operate with
-            both global insight and local understanding. From sourcing regions to
-            international ports, we bridge the gap between rural producers and
-            global markets with efficiency, empathy, and integrity.
-          </p>
-          <p className="text-gray-600 mb-4">
-            We work closely with farmers, processors, cooperatives, and logistics
-            partners, ensuring that every product we deliver upholds our promise
-            of quality, sustainability, and traceability. This collaborative
-            spirit drives smooth operations, fosters long-term relationships, and
-            fuels shared success for everyone involved — from farm to final
-            customer.
-          </p>
-          <p className="text-gray-600 font-medium">
-            Together, we are building more than just a business — we are building
-            a better future for communities and customers alike.
-          </p>
-        </motion.div>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          {/* Team Picture */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2 lg:w-2/5"
+          >
+            <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/team-photo.jpg" // Replace with your actual team photo path
+                alt="Beans & Pods Team"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </motion.div>
+
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2 lg:w-3/5 bg-white rounded-xl shadow-md p-8 md:p-12"
+          >
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              At Beans & Pods, our strength lies in our people.
+            </h3>
+            <p className="text-gray-600 mb-4">
+              We are a team of passionate professionals with deep-rooted expertise
+              in agriculture, supply chain management, international trade, and
+              sustainable development.
+            </p>
+            <p className="text-gray-600 mb-4">
+              Our diverse backgrounds and shared vision empower us to operate with
+              both global insight and local understanding. From sourcing regions to
+              international ports, we bridge the gap between rural producers and
+              global markets with efficiency, empathy, and integrity.
+            </p>
+            <p className="text-gray-600 mb-4">
+              We work closely with farmers, processors, cooperatives, and logistics
+              partners, ensuring that every product we deliver upholds our promise
+              of quality, sustainability, and traceability. This collaborative
+              spirit drives smooth operations, fosters long-term relationships, and
+              fuels shared success for everyone involved — from farm to final
+              customer.
+            </p>
+            <p className="text-gray-600 font-medium">
+              Together, we are building more than just a business — we are building
+              a better future for communities and customers alike.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

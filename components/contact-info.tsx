@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { GoogleMapsEmbed } from '@next/third-parties/google'
 import { BsWhatsapp } from "react-icons/bs";
+import Link from "next/link";
 
 const contactItem = {
   hidden: { opacity: 0, x: 10 },
@@ -87,8 +88,7 @@ export function ContactInfo() {
           <div className="flex items-start">
             <Mail className="h-5 w-5 text-primary mt-1 mr-3" />
             <div>
-              <p className="font-medium">Email</p>
-              <p className="text-gray-600">info@beansnpods.com</p>
+              <Link href={'mailto:info@beansandpods.com'} className="text-gray-600">info@beansandpods.com</Link>
             </div>
           </div>
         </motion.div>

@@ -68,7 +68,7 @@ export default function AboutPage() {
           <motion.h3
             className="font-semibold mb-4"
           >
-            Rooted in Agriculture. Driven by Impact.
+            Where Excellence Begins - In Every Harvest
           </motion.h3>
           <div className="prose max-w-none">
             <motion.p

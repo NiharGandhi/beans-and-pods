@@ -14,6 +14,7 @@ export function FeaturedProducts() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   const displayProducts = [
     {
@@ -22,7 +23,8 @@ export function FeaturedProducts() {
       slug: "cocoa-beans",
       category: "Cocoa Beans",
       image: "/product_categories/cocoa.jpg?height=300&width=400",
-      shortDescription: "Cocoa is a highly valued agricultural commodity derived from the seeds of the cacao tree (Theobroma cacao). Primarily grown in tropical regions such as West Africa, South America, and parts of Asia, cocoa is the essential raw material for chocolate production. Beyond confectionery, it is also used in cosmetics, pharmaceuticals, and beverages due to its rich flavor and health benefits. With growing global demand, cocoa plays a crucial role in international trade and supports millions of smallholder farmers worldwide.",
+      shortDescription: "Premium cocoa beans from tropical regions, essential for chocolate production and valued worldwide.",
+      fullDescription: "Cocoa is a highly valued agricultural commodity derived from the seeds of the cacao tree (Theobroma cacao). Primarily grown in tropical regions such as West Africa, South America, and parts of Asia, cocoa is the essential raw material for chocolate production. Beyond confectionery, it is also used in cosmetics, pharmaceuticals, and beverages due to its rich flavor and health benefits. With growing global demand, cocoa plays a crucial role in international trade and supports millions of smallholder farmers worldwide.",
     },
     {
       id: "2",
@@ -30,7 +32,8 @@ export function FeaturedProducts() {
       slug: "vanilla",
       category: "Vanilla",
       image: "/product_categories/vanilla.jpg?height=300&width=400",
-      shortDescription: "Vanilla is one of the world's most prized and aromatic spices, derived from the cured beans of the Vanilla planifolia orchid. Native to Mexico and now cultivated in tropical regions like Madagascar, Uganda, and Indonesia, vanilla is cherished for its rich, sweet flavor and fragrant aroma. Widely used in food, beverages, cosmetics, and perfumery, vanilla is a high-value crop with strong global demand, making it an important commodity in the flavor and fragrance industry.",
+      shortDescription: "One of the world's most prized spices with rich, sweet flavor and aromatic properties.",
+      fullDescription: "Vanilla is one of the world's most prized and aromatic spices, derived from the cured beans of the Vanilla planifolia orchid. Native to Mexico and now cultivated in tropical regions like Madagascar, Uganda, and Indonesia, vanilla is cherished for its rich, sweet flavor and fragrant aroma. Widely used in food, beverages, cosmetics, and perfumery, vanilla is a high-value crop with strong global demand, making it an important commodity in the flavor and fragrance industry.",
     },
     {
       id: "3",
@@ -38,7 +41,8 @@ export function FeaturedProducts() {
       slug: "coffee",
       category: "Coffee",
       image: "/product_categories/coffee.jpg?height=300&width=400",
-      shortDescription: "Coffee is one of the most widely consumed beverages in the world, made from the roasted seeds of the Coffea plant. Grown primarily in tropical regions such as Latin America, Africa, and Asia, coffee is a key global commodity that supports millions of farmers and contributes significantly to many economies. Renowned for its rich flavor, stimulating effects, and cultural significance, coffee is a staple in both everyday life and the international trade of agricultural products.",
+      shortDescription: "Premium coffee beans from tropical regions, supporting millions of farmers worldwide.",
+      fullDescription: "Coffee is one of the most widely consumed beverages in the world, made from the roasted seeds of the Coffea plant. Grown primarily in tropical regions such as Latin America, Africa, and Asia, coffee is a key global commodity that supports millions of farmers and contributes significantly to many economies. Renowned for its rich flavor, stimulating effects, and cultural significance, coffee is a staple in both everyday life and the international trade of agricultural products.",
     },
     {
       id: "4",
@@ -46,7 +50,8 @@ export function FeaturedProducts() {
       slug: "spices",
       category: "Spices",
       image: "/product_categories/spices.jpg?height=300&width=400",
-      shortDescription: "Spices are aromatic plant-derived ingredients used to enhance the flavor, color, and aroma of food. Sourced from seeds, roots, bark, and fruits, spices like black pepper, turmeric, cinnamon, cardamom, and cloves have been traded globally for centuries. Beyond culinary use, many spices offer medicinal and preservative properties, making them valuable in food, pharmaceutical, and cosmetic industries. With diverse origins across Asia, Africa, and Latin America, spices remain a vital component of global trade and cultural heritage.",
+      shortDescription: "Aromatic spices from around the world, enhancing flavor and offering medicinal properties.",
+      fullDescription: "Spices are aromatic plant-derived ingredients used to enhance the flavor, color, and aroma of food. Sourced from seeds, roots, bark, and fruits, spices like black pepper, turmeric, cinnamon, cardamom, and cloves have been traded globally for centuries. Beyond culinary use, many spices offer medicinal and preservative properties, making them valuable in food, pharmaceutical, and cosmetic industries. With diverse origins across Asia, Africa, and Latin America, spices remain a vital component of global trade and cultural heritage.",
     },
     {
       id: "5",
@@ -54,7 +59,8 @@ export function FeaturedProducts() {
       slug: "dry-beans",
       category: "Dry Beans",
       image: "/product_categories/grains_and_pulses.jpg?height=300&width=400",
-      shortDescription: "Grains and dry beans are essential agricultural staples that form the foundation of diets around the world. Grains such as wheat, rice, corn, and barley provide key sources of carbohydrates and nutrients, while dry beans—including kidney beans, chickpeas, lentils, and black beans—are rich in protein, fiber, and essential minerals. Widely cultivated across diverse climates, these crops are crucial for food security, animal feed, and industrial use. Their global trade supports sustainable agriculture and meets the nutritional needs of a growing population.",
+      shortDescription: "Essential agricultural staples providing nutrition and supporting global food security.",
+      fullDescription: "Grains and dry beans are essential agricultural staples that form the foundation of diets around the world. Grains such as wheat, rice, corn, and barley provide key sources of carbohydrates and nutrients, while dry beans—including kidney beans, chickpeas, lentils, and black beans—are rich in protein, fiber, and essential minerals. Widely cultivated across diverse climates, these crops are crucial for food security, animal feed, and industrial use. Their global trade supports sustainable agriculture and meets the nutritional needs of a growing population.",
     },
     {
       id: "6",
@@ -62,7 +68,8 @@ export function FeaturedProducts() {
       slug: "essential-oil",
       category: "Essential Oil",
       image: "/product_categories/essential_oil.jpg?height=300&width=400",
-      shortDescription: "Essential oils are concentrated plant extracts obtained through distillation or cold pressing, capturing the natural aroma and beneficial properties of herbs, flowers, fruits, and spices. Used extensively in aromatherapy, cosmetics, personal care, and natural medicine, essential oils such as lavender, peppermint, tea tree, and eucalyptus offer therapeutic, antibacterial, and calming effects. With increasing demand for natural and wellness products, essential oils play a vital role in the global health, beauty, and fragrance industries.",
+      shortDescription: "Concentrated plant extracts for aromatherapy, cosmetics, and natural wellness products.",
+      fullDescription: "Essential oils are concentrated plant extracts obtained through distillation or cold pressing, capturing the natural aroma and beneficial properties of herbs, flowers, fruits, and spices. Used extensively in aromatherapy, cosmetics, personal care, and natural medicine, essential oils such as lavender, peppermint, tea tree, and eucalyptus offer therapeutic, antibacterial, and calming effects. With increasing demand for natural and wellness products, essential oils play a vital role in the global health, beauty, and fragrance industries.",
     },
   ];
 
@@ -194,6 +201,23 @@ export function FeaturedProducts() {
     }
   };
 
+  const descriptionVariants = {
+    collapsed: {
+      height: "auto",
+      transition: {
+        duration: 0.3,
+        ease: [0.16, 1, 0.3, 1]
+      }
+    },
+    expanded: {
+      height: "auto",
+      transition: {
+        duration: 0.3,
+        ease: [0.16, 1, 0.3, 1]
+      }
+    }
+  };
+
   return (
     <section className="container mx-auto px-4 py-16 relative">
       <motion.div 
@@ -244,6 +268,8 @@ export function FeaturedProducts() {
               key={product.id} 
               className="flex-shrink-0 w-80 snap-start"
               variants={cardItem}
+              onMouseEnter={() => setHoveredCard(product.id)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
               <motion.div
                 className="h-full"
@@ -280,10 +306,48 @@ export function FeaturedProducts() {
                     </CardTitle>
                   </CardHeader>
                   
-                  <CardContent className="flex-grow pb-6">
-                    <p className="text-gray-600 leading-relaxed">
-                      {product.shortDescription}
-                    </p>
+                  <CardContent className="flex-grow pb-6 relative">
+                    <motion.div
+                      className="overflow-hidden"
+                      animate={hoveredCard === product.id ? "expanded" : "collapsed"}
+                      variants={descriptionVariants}
+                    >
+                      <AnimatePresence mode="wait">
+                        {hoveredCard === product.id ? (
+                          <motion.p
+                            key="full"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="text-gray-600 leading-relaxed text-sm"
+                          >
+                            {product.fullDescription}
+                          </motion.p>
+                        ) : (
+                          <motion.p
+                            key="short"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="text-gray-600 leading-relaxed"
+                          >
+                            {product.shortDescription}
+                          </motion.p>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                    
+                    {/* Hover indicator */}
+                    <motion.div 
+                      className="absolute bottom-2 right-2 text-xs text-gray-400"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hoveredCard === product.id ? 0 : 1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      Hover for details
+                    </motion.div>
                   </CardContent>
                   
                   <CardFooter className="pt-0">
