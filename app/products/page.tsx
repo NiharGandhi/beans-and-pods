@@ -18,7 +18,7 @@ export default async function ProductsPage() {
       <CategoryTabs currentCategory="all" />
 
       {/* Show different component for "all" category */}
-      <AllProducts products={products} />
+      <AllProducts />
     </div>
   )
 }

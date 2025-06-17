@@ -1,15 +1,16 @@
 import { productCategories } from "@/lib/constants"
 import Image from "next/image"
 import Link from "next/link"
+import React from "react"
 
-export function ProductCategories() {
+export const ProductCategories = React.memo(function ProductCategories() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {productCategories.map((category) => (
         <Link
           key={category.slug}
           href={`/products/${category.slug}`}
-          className="group relative block overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+          className="group relative block overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-md hover:scale-[1.02]"
         >
           {/* Image container with gradient overlay */}
           <div className="relative h-48 overflow-hidden">
@@ -17,9 +18,9 @@ export function ProductCategories() {
               src={category.image || "/images/category-placeholder.jpg"}
               alt={category.name}
               fill
+              loading="lazy"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={false}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           </div>
@@ -50,4 +51,4 @@ export function ProductCategories() {
       ))}
     </div>
   )
-}
+})

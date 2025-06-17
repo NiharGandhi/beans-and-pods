@@ -6,13 +6,7 @@ import { productCategories, products } from '@/lib/constants';
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-export async function generateMetadata({ params }: { params: { category: string } }) {
-  const category = productCategories.find(cat => cat.slug === params.category);
-  return {
-    title: category ? `${category.name} | Beans and Pods Trading Solutions` : "Category Not Found",
-    description: category ? `Explore our range of premium ${category.name.toLowerCase()}` : "Category not found"
-  };
-}
+
 
 export function generateStaticParams() {
   return productCategories.map(category => ({
@@ -38,7 +32,7 @@ const categoryBackgrounds = {
   'essential-oil': '/product_header/essential_oils.jpg'
 };
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
+export default async function CategoryPage({ params }: { params: { category: string } }) {
   const categorySlug = params.category;
   const categoryExists = productCategories.some(cat => cat.slug === categorySlug);
   
@@ -63,7 +57,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
             alt={categoryName}
             fill
             className="object-cover"
-            priority
+            priority // Keep priority to load hero image quickly
+            sizes="100vw"
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#fbf7ee]" />
