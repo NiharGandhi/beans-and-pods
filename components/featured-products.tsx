@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
 export function FeaturedProducts() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   const carouselRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,8 +24,8 @@ export function FeaturedProducts() {
       slug: "cocoa-beans",
       category: "Cocoa Beans",
       image: "/product_categories/cocoa.jpg?height=300&width=400",
-      shortDescription: "Premium cocoa beans from tropical regions, essential for chocolate production and valued worldwide.",
-      fullDescription: "Cocoa is a highly valued agricultural commodity derived from the seeds of the cacao tree (Theobroma cacao). Primarily grown in tropical regions such as West Africa, South America, and parts of Asia, cocoa is the essential raw material for chocolate production. Beyond confectionery, it is also used in cosmetics, pharmaceuticals, and beverages due to its rich flavor and health benefits. With growing global demand, cocoa plays a crucial role in international trade and supports millions of smallholder farmers worldwide.",
+      shortDescription: "Premium cocoa beans from tropical regions, essential for chocolate production.",
+      fullDescription: "Cocoa is a highly valued agricultural commodity derived from the seeds of the cacao tree. Primarily grown in tropical regions, it's the essential raw material for chocolate production and supports millions of smallholder farmers worldwide.",
     },
     {
       id: "2",
@@ -32,8 +33,8 @@ export function FeaturedProducts() {
       slug: "vanilla",
       category: "Vanilla",
       image: "/product_categories/vanilla.jpg?height=300&width=400",
-      shortDescription: "One of the world's most prized spices with rich, sweet flavor and aromatic properties.",
-      fullDescription: "Vanilla is one of the world's most prized and aromatic spices, derived from the cured beans of the Vanilla planifolia orchid. Native to Mexico and now cultivated in tropical regions like Madagascar, Uganda, and Indonesia, vanilla is cherished for its rich, sweet flavor and fragrant aroma. Widely used in food, beverages, cosmetics, and perfumery, vanilla is a high-value crop with strong global demand, making it an important commodity in the flavor and fragrance industry.",
+      shortDescription: "One of the world's most prized spices with rich, sweet flavor.",
+      fullDescription: "Vanilla is derived from the cured beans of the Vanilla planifolia orchid. Native to Mexico and now cultivated in tropical regions, it's cherished for its rich, sweet flavor and fragrant aroma.",
     },
     {
       id: "3",
@@ -41,8 +42,8 @@ export function FeaturedProducts() {
       slug: "coffee",
       category: "Coffee",
       image: "/product_categories/coffee.jpg?height=300&width=400",
-      shortDescription: "Premium coffee beans from tropical regions, supporting millions of farmers worldwide.",
-      fullDescription: "Coffee is one of the most widely consumed beverages in the world, made from the roasted seeds of the Coffea plant. Grown primarily in tropical regions such as Latin America, Africa, and Asia, coffee is a key global commodity that supports millions of farmers and contributes significantly to many economies. Renowned for its rich flavor, stimulating effects, and cultural significance, coffee is a staple in both everyday life and the international trade of agricultural products.",
+      shortDescription: "Premium coffee beans from tropical regions.",
+      fullDescription: "Coffee is one of the most widely consumed beverages in the world, made from the roasted seeds of the Coffea plant. Grown primarily in tropical regions, it supports millions of farmers.",
     },
     {
       id: "4",
@@ -50,17 +51,17 @@ export function FeaturedProducts() {
       slug: "spices",
       category: "Spices",
       image: "/product_categories/spices.jpg?height=300&width=400",
-      shortDescription: "Aromatic spices from around the world, enhancing flavor and offering medicinal properties.",
-      fullDescription: "Spices are aromatic plant-derived ingredients used to enhance the flavor, color, and aroma of food. Sourced from seeds, roots, bark, and fruits, spices like black pepper, turmeric, cinnamon, cardamom, and cloves have been traded globally for centuries. Beyond culinary use, many spices offer medicinal and preservative properties, making them valuable in food, pharmaceutical, and cosmetic industries. With diverse origins across Asia, Africa, and Latin America, spices remain a vital component of global trade and cultural heritage.",
+      shortDescription: "Aromatic spices from around the world.",
+      fullDescription: "Spices are aromatic plant-derived ingredients used to enhance flavor. Sourced from seeds, roots, bark, and fruits, they have been traded globally for centuries.",
     },
     {
       id: "5",
-      name: "Grains and Pulses",
+      name: "Grains & Pulses",
       slug: "dry-beans",
       category: "Dry Beans",
       image: "/product_categories/grains_and_pulses.jpg?height=300&width=400",
-      shortDescription: "Essential agricultural staples providing nutrition and supporting global food security.",
-      fullDescription: "Grains and dry beans are essential agricultural staples that form the foundation of diets around the world. Grains such as wheat, rice, corn, and barley provide key sources of carbohydrates and nutrients, while dry beans—including kidney beans, chickpeas, lentils, and black beans—are rich in protein, fiber, and essential minerals. Widely cultivated across diverse climates, these crops are crucial for food security, animal feed, and industrial use. Their global trade supports sustainable agriculture and meets the nutritional needs of a growing population.",
+      shortDescription: "Essential agricultural staples.",
+      fullDescription: "Grains and dry beans form the foundation of diets worldwide. They provide key sources of carbohydrates, protein, and essential minerals.",
     },
     {
       id: "6",
@@ -68,10 +69,14 @@ export function FeaturedProducts() {
       slug: "essential-oil",
       category: "Essential Oil",
       image: "/product_categories/essential_oil.jpg?height=300&width=400",
-      shortDescription: "Concentrated plant extracts for aromatherapy, cosmetics, and natural wellness products.",
-      fullDescription: "Essential oils are concentrated plant extracts obtained through distillation or cold pressing, capturing the natural aroma and beneficial properties of herbs, flowers, fruits, and spices. Used extensively in aromatherapy, cosmetics, personal care, and natural medicine, essential oils such as lavender, peppermint, tea tree, and eucalyptus offer therapeutic, antibacterial, and calming effects. With increasing demand for natural and wellness products, essential oils play a vital role in the global health, beauty, and fragrance industries.",
+      shortDescription: "Concentrated plant extracts.",
+      fullDescription: "Essential oils are concentrated plant extracts obtained through distillation or cold pressing, capturing the natural aroma and beneficial properties of plants.",
     },
   ];
+
+  // Calculate card width based on screen size
+  const cardWidth = isDesktop ? 320 : 280;
+  const cardGap = isDesktop ? 24 : 16;
 
   // Update scroll button states
   const updateScrollButtons = () => {
@@ -82,35 +87,32 @@ export function FeaturedProducts() {
     }
   };
 
-  // Auto-scroll effect with smooth infinite loop
+  // Auto-scroll effect
   useEffect(() => {
     if (!isAutoPlaying || isHovered || !carouselRef.current) return;
 
     const interval = setInterval(() => {
       if (carouselRef.current) {
-        const cardWidth = 320; // Card width (80 * 4px) + gap
         const nextIndex = (currentIndex + 1) % displayProducts.length;
         
         if (currentIndex === displayProducts.length - 1) {
-          // Smooth reset to beginning
           carouselRef.current.scrollTo({ 
             left: 0, 
             behavior: 'smooth' 
           });
           setCurrentIndex(0);
         } else {
-          // Scroll to next card
           carouselRef.current.scrollTo({ 
-            left: nextIndex * cardWidth, 
+            left: nextIndex * (cardWidth + cardGap), 
             behavior: 'smooth' 
           });
           setCurrentIndex(nextIndex);
         }
       }
-    }, 4000); // Increased interval for better UX
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, isHovered, currentIndex, displayProducts.length]);
+  }, [isAutoPlaying, isHovered, currentIndex, displayProducts.length, cardWidth, cardGap]);
 
   // Handle scroll events
   useEffect(() => {
@@ -119,11 +121,8 @@ export function FeaturedProducts() {
 
     const handleScroll = () => {
       updateScrollButtons();
-      
-      // Update current index based on scroll position
-      const cardWidth = 320;
       const scrollLeft = carousel.scrollLeft;
-      const newIndex = Math.round(scrollLeft / cardWidth);
+      const newIndex = Math.round(scrollLeft / (cardWidth + cardGap));
       setCurrentIndex(newIndex);
     };
 
@@ -131,13 +130,12 @@ export function FeaturedProducts() {
     updateScrollButtons();
 
     return () => carousel.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [cardWidth, cardGap]);
 
   const scrollToIndex = (index: number) => {
     if (carouselRef.current) {
-      const cardWidth = 320;
       carouselRef.current.scrollTo({ 
-        left: index * cardWidth, 
+        left: index * (cardWidth + cardGap), 
         behavior: 'smooth' 
       });
       setCurrentIndex(index);
@@ -181,7 +179,7 @@ export function FeaturedProducts() {
       }
     },
     hover: {
-      y: -8,
+      y: isDesktop ? -8 : 0,
       transition: { 
         duration: 0.3,
         ease: [0.16, 1, 0.3, 1]
@@ -219,19 +217,19 @@ export function FeaturedProducts() {
   };
 
   return (
-    <section className="container mx-auto px-4 py-16 relative">
+    <section className="container mx-auto px-4 py-12 md:py-16 relative">
       <motion.div 
-        className="text-center mb-16"
+        className="text-center mb-12 md:mb-16"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeIn}
       >
-        <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-3 md:mb-4">
           Featured Products
         </h2>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Discover our premium selection of agricultural trading products sourced from trusted global partners
+        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+          Discover our premium selection of agricultural products
         </p>
       </motion.div>
 
@@ -240,36 +238,39 @@ export function FeaturedProducts() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Left Arrow */}
-        <motion.button 
-          onClick={scrollLeft}
-          className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/95 backdrop-blur-sm hover:bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
-            !canScrollLeft ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110'
-          }`}
-          aria-label="Scroll left"
-          disabled={!canScrollLeft}
-          whileHover={{ scale: canScrollLeft ? 1.1 : 1 }}
-          whileTap={{ scale: canScrollLeft ? 0.95 : 1 }}
-        >
-          <ChevronLeft className="h-6 w-6 text-gray-700" />
-        </motion.button>
+        {/* Left Arrow - Desktop only */}
+        {isDesktop && (
+          <motion.button 
+            onClick={scrollLeft}
+            className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/95 backdrop-blur-sm hover:bg-white rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
+              !canScrollLeft ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110'
+            }`}
+            aria-label="Scroll left"
+            disabled={!canScrollLeft}
+            whileHover={{ scale: canScrollLeft ? 1.1 : 1 }}
+            whileTap={{ scale: canScrollLeft ? 0.95 : 1 }}
+          >
+            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-gray-700" />
+          </motion.button>
+        )}
 
         {/* Carousel */}
         <motion.div 
           ref={carouselRef}
-          className="flex overflow-x-auto scrollbar-hide space-x-6 py-6 px-4 snap-x snap-mandatory"
+          className="flex overflow-x-auto scrollbar-hide gap-4 md:gap-6 py-4 px-2 md:py-6 md:px-4 snap-x snap-mandatory"
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {displayProducts.map((product, index) => (
+          {displayProducts.map((product) => (
             <motion.div 
               key={product.id} 
-              className="flex-shrink-0 w-80 snap-start"
+              className="flex-shrink-0 w-[280px] md:w-80 snap-start"
               variants={cardItem}
-              onMouseEnter={() => setHoveredCard(product.id)}
-              onMouseLeave={() => setHoveredCard(null)}
+              onMouseEnter={() => isDesktop && setHoveredCard(product.id)}
+              onMouseLeave={() => isDesktop && setHoveredCard(null)}
+              onTouchStart={() => !isDesktop && setHoveredCard(prev => prev === product.id ? null : product.id)}
             >
               <motion.div
                 className="h-full"
@@ -277,36 +278,37 @@ export function FeaturedProducts() {
                 initial="hidden"
                 animate="show"
               >
-                <Card className="overflow-hidden flex flex-col h-full group border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/95 backdrop-blur-sm">
+                <Card className="overflow-hidden flex flex-col h-full group border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
                   <motion.div 
-                    className="relative h-64 w-full overflow-hidden"
-                    whileHover={{ scale: 1.02 }}
+                    className="relative h-56 md:h-64 w-full overflow-hidden"
+                    whileHover={{ scale: isDesktop ? 1.02 : 1 }}
                     transition={{ duration: 0.4 }}
                   >
                     <Image 
                       src={product.image || "/placeholder.svg"} 
                       alt={product.name} 
                       fill 
-                      className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      className="object-cover group-hover:scale-105 transition-transform duration-500" 
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority={displayProducts.indexOf(product) < 3} // Prioritize first 3 images
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     {/* Category Badge */}
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-sm font-semibold text-gray-800 rounded-full">
+                    <div className="absolute top-3 left-3 md:top-4 md:left-4">
+                      <span className="px-2 py-1 md:px-3 md:py-1 bg-white/90 backdrop-blur-sm text-xs md:text-sm font-semibold text-gray-800 rounded-full">
                         {product.category}
                       </span>
                     </div>
                   </motion.div>
                   
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
+                  <CardHeader className="pb-2 md:pb-3">
+                    <CardTitle className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
                       {product.name}
                     </CardTitle>
                   </CardHeader>
                   
-                  <CardContent className="flex-grow pb-6 relative">
+                  <CardContent className="flex-grow pb-4 md:pb-6 relative">
                     <motion.div
                       className="overflow-hidden"
                       animate={hoveredCard === product.id ? "expanded" : "collapsed"}
@@ -320,7 +322,7 @@ export function FeaturedProducts() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            className="text-gray-600 leading-relaxed text-sm"
+                            className="text-sm text-gray-600 leading-relaxed"
                           >
                             {product.fullDescription}
                           </motion.p>
@@ -331,7 +333,7 @@ export function FeaturedProducts() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
-                            className="text-gray-600 leading-relaxed"
+                            className="text-sm md:text-base text-gray-600 leading-relaxed line-clamp-3"
                           >
                             {product.shortDescription}
                           </motion.p>
@@ -339,26 +341,29 @@ export function FeaturedProducts() {
                       </AnimatePresence>
                     </motion.div>
                     
-                    {/* Hover indicator */}
-                    <motion.div 
-                      className="absolute bottom-2 right-2 text-xs text-gray-400"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hoveredCard === product.id ? 0 : 1 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      Hover for details
-                    </motion.div>
+                    {/* Hover indicator - Desktop only */}
+                    {isDesktop && (
+                      <motion.div 
+                        className="absolute bottom-2 right-2 text-xs text-gray-400"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: hoveredCard === product.id ? 0 : 1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        Hover for details
+                      </motion.div>
+                    )}
                   </CardContent>
                   
                   <CardFooter className="pt-0">
                     <motion.div 
                       className="w-full"
-                      whileHover={{ scale: 1.05 }} 
+                      whileHover={{ scale: isDesktop ? 1.05 : 1 }} 
                       whileTap={{ scale: 0.95 }}
                     >
                       <Button 
                         asChild 
-                        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 rounded-lg transition-all duration-300"
+                        size={isDesktop ? "default" : "sm"}
+                        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-300"
                       >
                         <Link href={`/products/${product.slug}`}>
                           Learn More
@@ -372,30 +377,32 @@ export function FeaturedProducts() {
           ))}
         </motion.div>
 
-        {/* Right Arrow */}
-        <motion.button 
-          onClick={scrollRight}
-          className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/95 backdrop-blur-sm hover:bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
-            !canScrollRight ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110'
-          }`}
-          aria-label="Scroll right"
-          disabled={!canScrollRight}
-          whileHover={{ scale: canScrollRight ? 1.1 : 1 }}
-          whileTap={{ scale: canScrollRight ? 0.95 : 1 }}
-        >
-          <ChevronRight className="h-6 w-6 text-gray-700" />
-        </motion.button>
+        {/* Right Arrow - Desktop only */}
+        {isDesktop && (
+          <motion.button 
+            onClick={scrollRight}
+            className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/95 backdrop-blur-sm hover:bg-white rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all duration-300 ${
+              !canScrollRight ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110'
+            }`}
+            aria-label="Scroll right"
+            disabled={!canScrollRight}
+            whileHover={{ scale: canScrollRight ? 1.1 : 1 }}
+            whileTap={{ scale: canScrollRight ? 0.95 : 1 }}
+          >
+            <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-gray-700" />
+          </motion.button>
+        )}
       </div>
 
       {/* Carousel Controls */}
-      <div className="flex items-center justify-center mt-8 space-x-6">
+      <div className="flex flex-col md:flex-row items-center justify-center mt-6 md:mt-8 space-y-4 md:space-y-0 md:space-x-6">
         {/* Dots Indicator */}
         <div className="flex space-x-2">
           {displayProducts.map((_, index) => (
             <button
               key={index}
               onClick={() => scrollToIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex 
                   ? 'bg-primary scale-125' 
                   : 'bg-gray-300 hover:bg-gray-400'
@@ -408,16 +415,16 @@ export function FeaturedProducts() {
         {/* Auto-play Toggle */}
         <motion.button
           onClick={toggleAutoPlay}
-          className="flex items-center space-x-2 px-4 py-2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+          className="flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           {isAutoPlaying ? (
-            <Pause className="h-4 w-4 text-gray-700" />
+            <Pause className="h-3 w-3 md:h-4 md:w-4 text-gray-700" />
           ) : (
-            <Play className="h-4 w-4 text-gray-700" />
+            <Play className="h-3 w-3 md:h-4 md:w-4 text-gray-700" />
           )}
-          <span className="text-sm font-medium text-gray-700">
+          <span className="text-xs md:text-sm font-medium text-gray-700">
             {isAutoPlaying ? 'Pause' : 'Play'}
           </span>
         </motion.button>
@@ -425,18 +432,21 @@ export function FeaturedProducts() {
 
       {/* Call to Action */}
       <motion.div 
-        className="mt-16 text-center"
+        className="mt-12 md:mt-16 text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.5, duration: 0.8 }}
       >
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <motion.div 
+          whileHover={{ scale: isDesktop ? 1.05 : 1 }} 
+          whileTap={{ scale: 0.95 }}
+        >
           <Button 
             asChild 
             variant="outline" 
-            size="lg" 
-            className="border-2 border-primary text-primary hover:text-white hover:bg-primary font-semibold px-8 py-4 rounded-full transition-all duration-300"
+            size={isDesktop ? "lg" : "default"}
+            className="border-2 border-primary text-primary hover:text-white hover:bg-primary font-semibold px-6 md:px-8 py-3 md:py-4 rounded-full transition-all duration-300"
           >
             <Link href="/products">
               View All Products
@@ -446,4 +456,21 @@ export function FeaturedProducts() {
       </motion.div>
     </section>
   );
+}
+
+// Add this hook to your hooks folder if you don't have it already
+function useMediaQuery(query: string) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    media.addListener(listener);
+    return () => media.removeListener(listener);
+  }, [matches, query]);
+
+  return matches;
 }
