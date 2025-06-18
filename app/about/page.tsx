@@ -75,7 +75,7 @@ export default function AboutPage() {
               className="text-lg text-gray-700 mb-4"
               variants={fadeIn}
             >
-              <strong>Beans & Pods</strong> is a dynamic and forward-thinking general trading company, specializing in the procurement and distribution of high-quality <strong>Agro Commodities</strong> — with a strong focus on <strong>Agro Commodities</strong>.
+              <strong>Beans & Pods</strong> is a dynamic and forward-thinking general trading company, specializing in the procurement and distribution of high-quality <strong>Agro Commodities</strong> — with a strong focus on <strong>Cocoa and Vanilla</strong>.
             </motion.p>
             <motion.p
               className="text-lg text-gray-700 mb-4"
