@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import heroImage from "@/public/pages/hero.webp";
 
 interface HeroSectionProps {
   title: string
@@ -55,11 +56,11 @@ export function HeroSection({ title }: HeroSectionProps) {
         animate="visible"
       >
         <Image
-          src="/pages/hero.webp?height=800&width=1920"
+          src={heroImage}
           alt="Agricultural field"
           fill
-          className="h-full w-full object-cover object-center"
           priority
+          className="h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black opacity-60" />
       </motion.div>
