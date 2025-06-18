@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import Image from "next/image"
 
@@ -73,6 +73,7 @@ export default function Header() {
           {/* Rest of your header code remains the same */}
           <div className="flex lg:hidden">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTitle hidden></SheetTitle>
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
