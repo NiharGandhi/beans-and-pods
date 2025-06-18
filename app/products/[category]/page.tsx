@@ -24,12 +24,12 @@ const categoryDescriptions = {
 };
 
 const categoryBackgrounds = {
-  'cocoa-beans': '/product_header/cocoa.jpg',
-  'vanilla': '/product_header/vanilla.jpeg',
-  'coffee': '/product_header/coffee.jpg',
-  'spices': '/product_header/spices.jpg',
+  'cocoa-beans': '/product_header/cocoa.webp',
+  'vanilla': '/product_header/vanilla.webp',
+  'coffee': '/product_header/coffee.webp',
+  'spices': '/product_header/spices.webp',
   'dry-beans': '/product_header/grains_and_pulses.webp',
-  'essential-oil': '/product_header/essential_oils.jpg'
+  'essential-oil': '/product_header/essential_oils.webp'
 };
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
