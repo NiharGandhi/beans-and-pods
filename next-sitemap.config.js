@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://beans-and-pods.vercel.app',
+  siteUrl: 'https://beansandpods.com',
   generateRobotsTxt: true,
   sitemapSize: 5000,
   changefreq: 'weekly',

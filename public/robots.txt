@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://beans-and-pods.vercel.app
+Host: https://beansandpods.com
 
 # Sitemaps
-Sitemap: https://beans-and-pods.vercel.app/sitemap.xml
+Sitemap: https://beansandpods.com/sitemap.xml
