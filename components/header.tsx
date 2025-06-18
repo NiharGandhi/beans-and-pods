@@ -64,7 +64,7 @@ export default function Header() {
             <Link href="/" className="-m-1.5 p-1.5">
               {/* <span className="sr-only">Beans and Pods Trading</span> */}
               <div className="flex items-center">
-                <Image src={"/logo.png"} height={150} width={150} alt="" />
+                <Image src={"/logo.png"} height={150} width={150} alt="Beans & Pods" />
                 {/* <span className="ml-2 text-lg font-semibold text-gray-900">Beans & Pods</span> */}
               </div>
             </Link>
