@@ -57,8 +57,8 @@ export function FeaturedProducts() {
     {
       id: "5",
       name: "Grains & Pulses",
-      slug: "dry-beans",
-      category: "Dry Beans",
+      slug: "grains-and-pulses",
+      category: "Grains & Pulses",
       image: "/product_categories/grains_and_pulses.webp?height=300&width=400",
       shortDescription: "Essential agricultural staples.",
       fullDescription: "Grains and dry beans form the foundation of diets worldwide. They provide key sources of carbohydrates, protein, and essential minerals.",
@@ -366,7 +366,7 @@ export function FeaturedProducts() {
                         className="w-full bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-300"
                       >
                         <Link href={`/products/${product.slug}`}>
-                          Learn More
+                          Explore {product.category}
                         </Link>
                       </Button>
                     </motion.div>

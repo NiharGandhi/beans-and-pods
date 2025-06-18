@@ -19,7 +19,7 @@ const categoryDescriptions = {
   'vanilla': 'Discover the allure of our hand-selected vanilla beans—aromatic treasures cultivated in the lush tropics of Madagascar and Uganda. Revered for their complexity, warmth, and depth, our vanilla offerings are the gold standard for fine dining, artisanal perfumery, and premium wellness products.',
   'coffee': 'Awaken your senses with our distinguished collection of Arabica and Robusta coffee beans, harvested from the highlands of the world\'s most celebrated terroirs. Each bean reflects a harmony of flavor, aroma, and body—crafted for discerning roasters, connoisseurs, and luxury coffee experiences.',
   'spices': 'Immerse yourself in the world of rare and precious spices, hand-harvested to capture nature\'s finest expressions. From the bold warmth of black pepper to the golden glow of turmeric and the fragrant elegance of cardamom, our spice collection is a journey through culinary excellence and aromatic sophistication.',
-  'dry-beans': 'Our premium grains and dry beans are a celebration of purity, tradition, and nutrition. Selected for their superior quality and natural richness, these staples—such as heirloom rice, golden lentils, and gourmet chickpeas—bring elegance and wholesomeness to every table and gourmet kitchen.',
+  'grains-and-pulses': 'Our premium grains and dry beans are a celebration of purity, tradition, and nutrition. Selected for their superior quality and natural richness, these staples—such as heirloom rice, golden lentils, and gourmet chickpeas—bring elegance and wholesomeness to every table and gourmet kitchen.',
   'essential-oil': 'Experience the essence of botanical luxury with our pure, therapeutic-grade essential oils. Steam-distilled and ethically sourced, each drop offers a journey of wellness and indulgence—perfect for high-end aromatherapy, skincare rituals, and refined fragrance blends.'
 };
 
@@ -28,7 +28,7 @@ const categoryBackgrounds = {
   'vanilla': '/product_header/vanilla.webp',
   'coffee': '/product_header/coffee.webp',
   'spices': '/product_header/spices.webp',
-  'dry-beans': '/product_header/grains_and_pulses.webp',
+  'grains-and-pulses': '/product_header/grains_and_pulses.webp',
   'essential-oil': '/product_header/essential_oils.webp'
 };
 

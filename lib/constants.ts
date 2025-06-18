@@ -4,7 +4,7 @@ export const productCategories = [
   { slug: 'vanilla', name: 'Vanilla', image: '/product_categories/vanilla.webp', description: '' },
   { slug: 'coffee', name: 'Coffee', image: '/product_categories/coffee.webp', description: '' },
   { slug: 'spices', name: 'Spices', image: '/product_categories/spices.webp', description: '' },
-  { slug: 'dry-beans', name: 'Grains and Pulses', image: '/product_categories/grains_and_pulses.webp', description: '' },
+  { slug: 'grains-and-pulses', name: 'Grains and Pulses', image: '/product_categories/grains_and_pulses.webp', description: '' },
   { slug: 'essential-oil', name: 'Essential Oil', image: '/product_categories/essential_oil.webp', description: '' }
 ] as const;
 
@@ -571,10 +571,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-1",
+    "id": "grains-and-pulses-1",
     "name": "Red Kidney Bean",
     "slug": "red-kidney-bean",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/red-kidney-bean.jpg?height=300&width=400",
     "shortDescription": "Nutritious red kidney beans with a firm texture and hearty flavor—perfect for soups, stews, and salads.",
     "description": "Our premium Red Kidney Beans are known for their vibrant red color, firm texture, and robust flavor. These versatile beans are a staple in many cuisines, perfect for hearty soups, stews, chili, salads, and casseroles. \n Rich in protein, dietary fiber, and essential nutrients, red kidney beans support a healthy lifestyle while adding depth and heartiness to your favorite dishes. Their firm skin holds up well during cooking, delivering a satisfying bite every time.",
@@ -596,10 +596,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-2",
+    "id": "grains-and-pulses-2",
     "name": "White Kidney Bean",
     "slug": "white-kidney-bean",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/white-kidney-bean.jpg?height=300&width=400",
     "shortDescription": "Creamy and mild white kidney beans, ideal for soups, casseroles, and protein-rich meals.",
     "description": "Our premium White Kidney Beans are carefully sourced and selected for their creamy texture and mild, delicate flavor. Also known as cannellini beans, these beans are a versatile staple in kitchens worldwide, perfect for soups, stews, casseroles, and salads. \n Rich in protein, fiber, and essential nutrients, white kidney beans support a healthy diet while adding hearty texture and subtle taste to your favorite dishes. Their smooth skin and firm flesh hold up well during cooking, making them ideal for both home cooks and food manufacturers.",
@@ -613,10 +613,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-3",
+    "id": "grains-and-pulses-3",
     "name": "Yellow Arhar Lentil",
     "slug": "yellow-arhar-lentil",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/yellow-arhar-lentil.jpg?height=300&width=400",
     "shortDescription": "Split yellow arhar lentils packed with protein and a mild, nutty flavor—perfect for dals and curries.",
     "description": "Our high-quality Yellow Arhar Lentils, also known as Toor Dal, are a staple ingredient in many traditional cuisines, prized for their rich nutritional profile and mild, nutty flavor. These split lentils cook quickly to a soft, creamy texture, making them perfect for dals, soups, stews, and curries. \n Packed with protein, fiber, and essential minerals, Yellow Arhar Lentils support a balanced and wholesome diet. Their vibrant golden color adds visual appeal to your dishes while delivering a comforting, satisfying taste.",
@@ -633,10 +633,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-4",
+    "id": "grains-and-pulses-4",
     "name": "Red Cow Peas",
     "slug": "red-cow-peas",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/red-cow-peas.jpg?height=300&width=400",
     "shortDescription": "Nutty-flavored red cow peas rich in protein and fiber—great for stews, curries, and salads.",
     "description": "Our high-quality Red Cow Peas are valued for their rich, nutty flavor and firm texture, making them a popular choice in a variety of traditional dishes. Packed with protein, fiber, and essential nutrients, these peas are an excellent addition to stews, curries, salads, and rice dishes. \n Known for their deep reddish-brown color and hearty taste, red cow peas provide a wholesome and satisfying ingredient that supports a balanced diet.",
@@ -653,10 +653,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-5",
+    "id": "grains-and-pulses-5",
     "name": "Speckled Kidney Beans",
     "slug": "speckled-kidney-beans",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/speckled-kidney-beans.png?height=300&width=400",
     "shortDescription": "Colorful speckled kidney beans with a creamy texture and rich, earthy flavor—ideal for hearty dishes.",
     "description": "Our premium Speckled Kidney Beans are known for their unique, attractive speckled appearance and creamy texture. These beans offer a rich, earthy flavor and are a versatile ingredient for a variety of dishes including soups, stews, salads, and casseroles. \n Rich in protein, fiber, and essential nutrients, speckled kidney beans support a nutritious diet while adding visual appeal and hearty taste to your meals.",
@@ -672,10 +672,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-6",
+    "id": "grains-and-pulses-6",
     "name": "Lima Beans",
     "slug": "lima-beans",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/lima-bean.png?height=300&width=400",
     "shortDescription": "Tender and buttery lima beans packed with nutrients—perfect for soups, stews, and side dishes.",
     "description": "Our premium Lima Beans are prized for their tender, buttery texture and mild, creamy flavor. Known also as butter beans, these versatile legumes are perfect for soups, stews, casseroles, and side dishes. \n Rich in protein, fiber, and essential nutrients, lima beans offer a nutritious and satisfying addition to a balanced diet. Their smooth skin and delicate taste make them a favorite choice for both traditional and contemporary recipes.",
@@ -689,10 +689,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-7",
+    "id": "grains-and-pulses-7",
     "name": "Chick Peas (Black Chana)",
     "slug": "black-chana",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/chickpeas.jpeg?height=300&width=400",
     "shortDescription": "Hearty black chana loaded with protein and fiber—perfect for traditional dishes and healthy meals.",
     "description": "Our premium Black Chana (Black Chickpeas) are a nutritious and versatile legume known for their robust flavor and firm texture. Widely used in traditional dishes across many cultures, black chana is rich in protein, fiber, and essential minerals, making it a perfect choice for healthy meals. \n These small, dark chickpeas hold their shape well during cooking, ideal for curries, salads, snacks, and stews, providing hearty texture and deep, earthy taste.",
@@ -705,10 +705,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-8",
+    "id": "grains-and-pulses-8",
     "name": "Red Lentil",
     "slug": "red-lentil",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/red-lentil.jpg?height=300&width=400",
     "shortDescription": "Quick-cooking red lentils with a mild, slightly sweet flavor—ideal for soups, dals, and purees.",
     "description": "Our premium Red Lentils are prized for their quick cooking time, vibrant orange-red color, and mild, slightly sweet flavor. These versatile lentils easily break down to create creamy textures, making them ideal for soups, dals, purees, and stews. \n Rich in protein, fiber, and essential nutrients, red lentils support a healthy and balanced diet, providing nourishing meals with convenience and taste.",
@@ -724,10 +724,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-9",
+    "id": "grains-and-pulses-9",
     "name": "Sesame Seeds",
     "slug": "sesame-seeds",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/sesame-seeds.png?height=300&width=400",
     "shortDescription": "Nutty and crunchy sesame seeds packed with flavor—perfect for baking, cooking, and garnishing.",
     "description": "Our premium Sesame Seeds are small, nutty-flavored seeds prized worldwide for their versatility and nutritional benefits. These crunchy seeds are perfect for baking, cooking, garnishing, and oil extraction, adding delightful texture and flavor to a wide range of dishes. \n Rich in healthy fats, protein, and essential minerals, sesame seeds support a balanced diet while enhancing the taste and appearance of your meals.",
@@ -746,10 +746,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-10",
+    "id": "grains-and-pulses-10",
     "name": "Pigeon Peas",
     "slug": "pigeon-peas",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/pigeon-peas.jpg?height=300&width=400",
     "shortDescription": "Protein-rich pigeon peas with a mild, nutty flavor—ideal for traditional dals, stews, and curries.",
     "description": "Our premium Pigeon Peas are a nutritious legume known for their mild, nutty flavor and firm texture. Widely used in traditional dishes across many cultures, pigeon peas are rich in protein, fiber, and essential nutrients, making them an excellent choice for healthy meals. \n These versatile peas hold their shape well during cooking, perfect for dals, stews, curries, and salads, adding hearty texture and wholesome taste to your dishes.",
@@ -766,10 +766,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-11",
+    "id": "grains-and-pulses-11",
     "name": "Green Mung Bean",
     "slug": "green-mung-bean",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/green-mung-bean.jpg?height=300&width=400",
     "shortDescription": "Nutritious green mung beans with a mild, slightly sweet taste—perfect for soups, salads, and sprouts.",
     "description": "Our premium Green Mung Beans are small, vibrant legumes known for their mild, slightly sweet flavor and versatility in cooking. Rich in protein, fiber, and essential nutrients, these beans are a popular choice for soups, salads, stir-fries, and sprouting. \n Green mung beans cook quickly and hold their shape well, making them ideal for both traditional and modern recipes. Their nutritional benefits support a balanced diet and promote overall wellness.",
@@ -792,10 +792,10 @@ export const products = [
     "certifications": []
   },
   {
-    "id": "dry-beans-12",
+    "id": "grains-and-pulses-12",
     "name": "Black Eyed Bean",
     "slug": "black-eyed-bean",
-    "category": "dry-beans",
+    "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/black-eyed-bean.png?height=300&width=400",
     "shortDescription": "Classic black eyed beans with a creamy texture and earthy flavor—great for salads, stews, and sides.",
     "description": "Our premium Black Eyed Beans, also known as cowpeas, are prized for their creamy texture and distinctive earthy flavor. These versatile beans are a staple in many traditional dishes and offer excellent nutritional value, including protein, fiber, and essential minerals. \n With their characteristic black eye marking on a pale skin, black eyed beans hold their shape well during cooking, making them ideal for salads, stews, soups, and side dishes.",
