@@ -11,6 +11,7 @@ export const ProductCategories = React.memo(function ProductCategories() {
           key={category.slug}
           href={`/products/${category.slug}`}
           className="group relative block overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-md hover:scale-[1.02]"
+          aria-label={`Explore ${category.name} category`}
         >
           {/* Image container with gradient overlay */}
           <div className="relative h-48 overflow-hidden">
@@ -28,7 +29,6 @@ export const ProductCategories = React.memo(function ProductCategories() {
           {/* Text content */}
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
             <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
-            <p className="text-white/90 mb-4 line-clamp-2">{category.description}</p>
             <span className="inline-flex items-center font-medium text-white/90 group-hover:text-white transition-colors">
               Explore {category.name}
               <svg
