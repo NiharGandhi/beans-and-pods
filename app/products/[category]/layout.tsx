@@ -17,8 +17,18 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${matchedCategory.name} | Beans and Pods Trading Solutions`,
-    description: `Explore our range of premium ${matchedCategory.name.toLowerCase()}`,
+    title: `${matchedCategory.name}`,
+    description: `${matchedCategory.description}`,
+    openGraph: {
+      title: `${matchedCategory.name}`,
+      description: `${matchedCategory.description}`,
+      images: [
+        {
+          url: matchedCategory.image,
+          alt: matchedCategory.name,
+        }
+      ],
+    }
   };
 }
 
