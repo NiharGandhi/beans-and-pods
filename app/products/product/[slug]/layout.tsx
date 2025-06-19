@@ -16,18 +16,35 @@ export async function generateMetadata(
     };
   }
 
+  const category = productCategories.find(cat => cat.slug === product.category);
+
   return {
-    title: `${product.name}`,
+    title: `${product.name} | ${category?.name || 'Product'} | Beans and Pods`,
     description: product.shortDescription,
+    keywords: [
+      product.name,
+      `${product.name} wholesale`,
+      `${product.name} supplier`,
+      `${category?.name} products`,
+      `buy ${product.name} in Dubai`
+    ],
     openGraph: {
-      title: `${product.name}`,
-      description: `${product.description}`,
+      title: `${product.name} | Beans and Pods`,
+      description: product.shortDescription,
+      url: `/products/${product.slug}`,
+      type: 'article',
+      publishedTime: new Date().toISOString(),
       images: [
         {
           url: product.image,
+          width: 800,
+          height: 600,
           alt: product.name,
         }
       ],
+    },
+    alternates: {
+      canonical: `/products/${product.slug}`,
     }
   }
 }
