@@ -9,16 +9,53 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Beans and Pods Trading Solutions",
+    default: "Beans and Pods Trading Solutions | Premium Agricultural Commodities",
     template: "%s | Beans and Pods Trading Solutions"
   },
-  description: "Premium agricultural trading products for the B2B market",
+  description: "Global supplier of premium cocoa beans, vanilla, spices, coffee, grains & pulses, and essential oils. B2B wholesale distributor based in Dubai.",
+  keywords: [
+    "Cocoa Beans Dubai",
+    "Vanilla Beans Supplier",
+    "Premium Spices Wholesale",
+    "Arabica Coffee Beans",
+    "Essential Oils Export",
+    "Grains and Pulses Supplier",
+    "B2B Agricultural Products",
+    "Beans and Pods Dubai",
+    "Cocoa Nibs Wholesale",
+    "Vanilla Extract Supplier"
+  ],
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
-  keywords: "Cocoa Beans, Vanilla, Spices, Coffee, Grains and Pulses, Essential Oils, Dubai, Beans and Pods Dubai"
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.beansandpods.com',
+    siteName: 'Beans and Pods Trading Solutions',
+    title: 'Premium Agricultural Commodities Supplier',
+    description: 'Global B2B supplier of premium cocoa, vanilla, spices, coffee, grains and essential oils',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Beans and Pods Trading Solutions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Beans and Pods Trading Solutions',
+    description: 'Premium Agricultural Commodities Supplier',
+    images: ['/logo.png'],
+  },
+  metadataBase: new URL('https://www.beansandpods.com'),
+  alternates: {
+    canonical: '/',
+  }
 }
 
 export default function RootLayout({
