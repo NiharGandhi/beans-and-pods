@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://beansandpods.com
+Host: https://www.beansandpods.com
 
 # Sitemaps
-Sitemap: https://beansandpods.com/sitemap.xml
+Sitemap: https://www.beansandpods.com/sitemap.xml

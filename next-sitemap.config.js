@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://beansandpods.com',
+  siteUrl: 'https://www.beansandpods.com',
   generateRobotsTxt: true,
   sitemapSize: 5000,
   changefreq: 'weekly',
