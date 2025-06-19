@@ -29,8 +29,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${product.name} | Beans and Pods Trading Solutions`,
+    title: `${product.name}`,
     description: product.shortDescription,
+    openGraph: {
+      title: `${product.name}`,
+      description: `${product.description}`,
+      images: [
+        {
+          url: product.image,
+          alt: product.name,
+        }
+      ],
+    }
   }
 }
 
