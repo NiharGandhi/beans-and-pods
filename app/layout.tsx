@@ -17,7 +17,8 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
-  }
+  },
+  keywords: "Cocoa Beans, Vanilla, Spices, Coffee, Grains and Pulses, Essential Oils, Dubai, Beans and Pods Dubai"
 }
 
 export default function RootLayout({
