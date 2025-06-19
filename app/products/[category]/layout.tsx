@@ -17,17 +17,30 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${matchedCategory.name}`,
-    description: `${matchedCategory.description}`,
+    title: `${matchedCategory.name} Products | Wholesale Supplier | Beans and Pods`,
+    description: `Premium ${matchedCategory.name} products for wholesale and B2B customers. ${matchedCategory.description || ''}`,
+    keywords: [
+      `${matchedCategory.name} wholesale`,
+      `buy ${matchedCategory.name} in Dubai`,
+      `${matchedCategory.name} supplier`,
+      `bulk ${matchedCategory.name}`,
+      `export quality ${matchedCategory.name}`
+    ],
     openGraph: {
-      title: `${matchedCategory.name}`,
-      description: `${matchedCategory.description}`,
+      title: `${matchedCategory.name} Products | Beans and Pods`,
+      description: `Premium ${matchedCategory.name} products for wholesale and B2B customers`,
+      url: `/products/category/${matchedCategory.slug}`,
       images: [
         {
           url: matchedCategory.image,
+          width: 800,
+          height: 600,
           alt: matchedCategory.name,
         }
       ],
+    },
+    alternates: {
+      canonical: `/products/category/${matchedCategory.slug}`,
     }
   };
 }
