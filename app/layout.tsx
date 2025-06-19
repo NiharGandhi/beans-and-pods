@@ -8,7 +8,10 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Beans and Pods Trading Solutions",
+  title: {
+    default: "Beans and Pods Trading Solutions",
+    template: "%s | Beans and Pods Trading Solutions"
+  },
   description: "Premium agricultural trading products for the B2B market",
   icons: {
     icon: '/favicon.ico',

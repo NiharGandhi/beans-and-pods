@@ -6,8 +6,6 @@ import { productCategories, products } from '@/lib/constants';
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-
-
 export function generateStaticParams() {
   return productCategories.map(category => ({
     category: category.slug
@@ -32,7 +30,8 @@ const categoryBackgrounds = {
   'essential-oil': '/product_header/essential_oils.webp'
 };
 
-export default async function CategoryPage({ params }: { params: { category: string } }) {
+export default async function CategoryPage(props: { params: Promise<{ category: string }> }) {
+  const params = await props.params;
   const categorySlug = params.category;
   const categoryExists = productCategories.some(cat => cat.slug === categorySlug);
   

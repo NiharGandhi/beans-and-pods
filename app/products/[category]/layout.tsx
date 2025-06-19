@@ -1,9 +1,11 @@
-// app/(main)/products/[category]/layout.tsx
 import { productCategories } from '@/lib/constants';
-import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { category: string } }) {
-  // Destructure after awaiting (though params is usually synchronous)
+
+export async function generateMetadata(
+  props: { params: Promise<{ category: string }> }
+): Promise<Metadata> {
+  const params = await props.params;
   const category = params.category;
 
   const matchedCategory = productCategories.find(cat => cat.slug === category);
@@ -19,6 +21,7 @@ export async function generateMetadata({ params }: { params: { category: string 
     description: `Explore our range of premium ${matchedCategory.name.toLowerCase()}`,
   };
 }
+
 
 export default function CategoryLayout({
   children,
