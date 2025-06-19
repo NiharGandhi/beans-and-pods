@@ -18,33 +18,8 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const product = await getProductBySlug(params.slug)
-
-  if (!product) {
-    return {
-      title: "Product Not Found",
-      description: "The requested product could not be found",
-    }
-  }
-
-  return {
-    title: `${product.name}`,
-    description: product.shortDescription,
-    openGraph: {
-      title: `${product.name}`,
-      description: `${product.description}`,
-      images: [
-        {
-          url: product.image,
-          alt: product.name,
-        }
-      ],
-    }
-  }
-}
-
-export default async function ProductPage({ params }: { params: { slug: string } }) {
+export default async function ProductPage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const product = await getProductBySlug(params.slug)
 
   if (!product) {
