@@ -67,6 +67,17 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Beans and Pods Trading Solutions",
+          "url": "https://www.beansandpods.com",
+          "logo": "https://www.beansandpods.com/logo.png",
+          "sameAs": [
+            // Add your social profiles here
+          ],
+          "description": "Global supplier of premium cocoa beans, vanilla, spices, coffee, grains & pulses, and essential oils. B2B wholesale distributor based in Dubai."
+        }) }} />
       </head>
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col">

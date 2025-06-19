@@ -26,7 +26,7 @@ export async function generateMetadata(
       `${product.name} wholesale`,
       `${product.name} supplier`,
       `${category?.name} products`,
-      `buy ${product.name} in Dubai`
+      `buy ${product.name} in Dubai`,
     ],
     openGraph: {
       title: `${product.name} | Beans and Pods`,

@@ -46,40 +46,64 @@ export default async function CategoryPage(props: { params: Promise<{ category: 
   const backgroundImage = categoryBackgrounds[categorySlug as keyof typeof categoryBackgrounds] || '/images/default-category.jpg';
 
   return (
-    <div className="w-full">
-      {/* Hero Section with Fading Background */}
-      <div className="relative h-96 w-full">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={backgroundImage}
-            alt={categoryName}
-            fill
-            className="object-cover"
-            priority // Keep priority to load hero image quickly
-            sizes="100vw"
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#fbf7ee]" />
-        </div>
-        
-        {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-end pb-12">
-          <div className="container mx-auto px-4">
-            <PageHeader
-              title={categoryName}
-              description={categoryDescription}
-              backgroundImage
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Products",
+                "item": "https://www.beansandpods.com/products"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": categoryName,
+                "item": `https://www.beansandpods.com/products/${categorySlug}`
+              }
+            ]
+          }) }}
+      />
+      <div className="w-full">
+        {/* Hero Section with Fading Background */}
+        <div className="relative h-96 w-full">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={backgroundImage}
+              alt={categoryName}
+              fill
+              className="object-cover"
+              priority // Keep priority to load hero image quickly
+              sizes="100vw"
             />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#fbf7ee]" />
+          </div>
+          
+          {/* Content */}
+          <div className="relative z-10 h-full flex flex-col justify-end pb-12">
+            <div className="container mx-auto px-4">
+              <PageHeader
+                title={categoryName}
+                description={categoryDescription}
+                backgroundImage
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        <CategoryTabs currentCategory={categorySlug} />
-        <ProductGrid products={filteredProducts} />
+        {/* Main Content */}
+        <div className="container mx-auto px-4 py-12">
+          <CategoryTabs currentCategory={categorySlug} />
+          <ProductGrid products={filteredProducts} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
