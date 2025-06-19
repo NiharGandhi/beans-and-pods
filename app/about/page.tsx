@@ -3,7 +3,7 @@ import AboutPage from "@/components/pages/about-page";
 
 
 export const metadata: Metadata = {
-  title: "About Us | Beans and Pods Trading Solutions",
+  title: "About Us",
   description: "Learn about Beans and Pods - a premier supplier of premium agricultural commodities including cocoa, vanilla, spices, coffee, grains and essential oils",
   keywords: [
     "about Beans and Pods",

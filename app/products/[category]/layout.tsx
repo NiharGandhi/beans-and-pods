@@ -17,7 +17,7 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${matchedCategory.name} Products | Wholesale Supplier | Beans and Pods`,
+    title: `${matchedCategory.name} Products | Wholesale Supplier`,
     description: `Premium ${matchedCategory.name} products for wholesale and B2B customers. ${matchedCategory.description || ''}`,
     keywords: [
       `${matchedCategory.name} wholesale`,
