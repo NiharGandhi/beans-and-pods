@@ -20,7 +20,7 @@ export async function generateMetadata(
   const category = productCategories.find(cat => cat.slug === product.category);
 
   return {
-    title: `Buy ${product.name} in Dubai`,
+    title: `${product.name}`,
     description: product.shortDescription,
     keywords: [
       product.name,
