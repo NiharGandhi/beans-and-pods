@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Twitter, MapPin, Phone, Mail } from "lucide-react"
+import { MapPin, Phone, Mail } from "lucide-react"
 import { BsWhatsapp } from "react-icons/bs"
 import { productCategories } from '@/lib/constants';
 

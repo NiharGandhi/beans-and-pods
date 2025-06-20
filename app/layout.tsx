@@ -117,6 +117,37 @@ export default function RootLayout({
             })
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={
+            {
+              __html: JSON.stringify(
+                {
+                  "@context": "https://schema.org",
+                  "@type": "WebSite",
+                  "name": "Beans and Pods Trading Solutions",
+                  "url": "https://www.beansandpods.com"
+                }
+              )
+            }
+          }
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={
+            {
+              __html: JSON.stringify(
+                {
+                  "@context": "https://schema.org",
+                  "@type": "Organization",
+                  "name": "Beans and Pods Trading Solutions",
+                  "url": "https://www.beansandpods.com",
+                  "logo": "https://www.beansandpods.com/logo.png"
+                }
+              )
+            }
+          }
+        />
         <link rel="preload" href="/product_categories/cocoa.webp" as="image" />
         <link rel="preload" href="/product_categories/vanilla.webp" as="image" />
         <link rel="preload" href="/product_categories/coffee.webp" as="image" />
