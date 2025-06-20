@@ -630,7 +630,7 @@ export const products = [
   },
   {
     "id": "grains-and-pulses-1",
-    "name": "Red Kidney Bean",
+    "name": "Red Kidney Beans",
     "slug": "red-kidney-bean",
     "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/red-kidney-bean.jpg",
@@ -657,7 +657,7 @@ export const products = [
   },
   {
     "id": "grains-and-pulses-2",
-    "name": "White Kidney Bean",
+    "name": "White Kidney Beans",
     "slug": "white-kidney-bean",
     "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/white-kidney-bean.jpg",
@@ -845,7 +845,7 @@ export const products = [
   },
   {
     "id": "grains-and-pulses-11",
-    "name": "Green Mung Bean",
+    "name": "Green Mung Beans",
     "slug": "green-mung-bean",
     "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/green-mung-bean.jpg",
@@ -873,7 +873,7 @@ export const products = [
   },
   {
     "id": "grains-and-pulses-12",
-    "name": "Black Eyed Bean",
+    "name": "Black Eyed Beans",
     "slug": "black-eyed-bean",
     "category": "grains-and-pulses",
     "image": "/grains_and_pulses_products/black-eyed-bean.png",
