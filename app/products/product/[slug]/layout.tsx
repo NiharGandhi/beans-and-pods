@@ -4,10 +4,11 @@ import { Metadata } from 'next';
 
 
 export async function generateMetadata(
-  props: { params: Promise<{ slug: string }> }
+  props: { params: { slug: string } }
 ): Promise<Metadata> {
   const productSlug = (await props.params).slug
   const product = await getProductBySlug(productSlug);
+  const siteUrl = 'https://beansandpods.com'
 
   if (!product) {
     return {
@@ -19,7 +20,7 @@ export async function generateMetadata(
   const category = productCategories.find(cat => cat.slug === product.category);
 
   return {
-    title: `${product.name} | ${category?.name || 'Product'}`,
+    title: `Buy ${product.name} in Dubai`,
     description: product.shortDescription,
     keywords: [
       product.name,
@@ -31,7 +32,7 @@ export async function generateMetadata(
     openGraph: {
       title: `${product.name} | Beans and Pods`,
       description: product.shortDescription,
-      url: `/products/${product.slug}`,
+      url: `${siteUrl}/products/${product.slug}`,
       type: 'article',
       publishedTime: new Date().toISOString(),
       images: [
@@ -44,13 +45,13 @@ export async function generateMetadata(
       ],
     },
     alternates: {
-      canonical: `/products/${product.slug}`,
+      canonical: `${siteUrl}/products/${product.slug}`,
     }
   }
 }
 
 
-export default function CategoryLayout({
+export default function ProductLayout({
   children,
 }: {
   children: React.ReactNode;
