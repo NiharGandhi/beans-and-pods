@@ -14,6 +14,8 @@ interface Product {
   specifications?: Record<string, string | undefined>
   origin?: string
   certifications?: string[]
+  ratingValue?: number    
+  ratingCount?: number   
 }
 
 interface ProductDetailsProps {
@@ -37,7 +39,14 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               "@type": "Brand",
               "name": "Beans and Pods"
             },
-            "category": product.category
+            "category": product.category,
+            ...(product.ratingValue && product.ratingCount && {
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": product.ratingValue,
+                "ratingCount": product.ratingCount
+              }
+            })
           })
         }}
       />
@@ -55,6 +64,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         <div>
           <div className="mb-6">
             <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
+            {/* 👇 Add this block for visible rating */}
+            {product.ratingValue && product.ratingCount && (
+              <div className="text-sm text-gray-600 mb-2">
+                ⭐ {product.ratingValue}/5 rating from {product.ratingCount} wholesale buyers
+              </div>
+            )}
             <p className="text-sm text-gray-500 mb-4">
               Category: {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
             </p>
@@ -69,7 +84,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 <TabsTrigger value="certifications">Certifications</TabsTrigger>
               )}
             </TabsList>
-            
+
             <TabsContent value="description" className="mt-4">
               <div className="prose max-w-none text-gray-700">
                 {product.description ? (
@@ -81,7 +96,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 )}
               </div>
             </TabsContent>
-            
+
             <TabsContent value="specifications" className="mt-4">
               {product.specifications ? (
                 <div className="space-y-3">
@@ -107,7 +122,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 </div>
               )}
             </TabsContent>
-            
+
             <TabsContent value="certifications" className="mt-4">
               {product.certifications && product.certifications.length > 0 ? (
                 <ul className="space-y-2">

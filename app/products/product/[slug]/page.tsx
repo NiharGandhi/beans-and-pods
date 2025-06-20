@@ -39,11 +39,13 @@ export default async function ProductPage(props: { params: Promise<{ slug: strin
               "@type": "Brand",
               "name": "Beans and Pods"
             },
-            "offers": {
-              "@type": "Offer",
-              "url": `https://yourdomain.com/products/${product.slug}`,
-              "availability": "https://schema.org/InStock"
-            }
+            ...(product.ratingValue && product.ratingCount && {
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": product.ratingValue,
+                "ratingCount": product.ratingCount
+              }
+            })
           })}
         </script>
         <script type="application/ld+json">

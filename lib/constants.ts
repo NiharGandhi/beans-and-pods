@@ -27,7 +27,9 @@ export const products = [
       "Bean Count": "90 to 100 beans per 100g",
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 23
   },
   {
     "id": "cocoa-beans-2",
@@ -44,7 +46,9 @@ export const products = [
       "Shell content": "less than 5%"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 25
   },
   {
     "id": "cocoa-beans-3",
@@ -62,7 +66,9 @@ export const products = [
       "Fineness (≤ 100 microns)": "96% - 99%"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 19
   },
   {
     "id": "cocoa-beans-4",
@@ -78,7 +84,9 @@ export const products = [
       "Types": "non natural / natural"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 29
   },
   {
     "id": "cocoa-beans-5",
@@ -97,7 +105,9 @@ export const products = [
       "Moisture": "5% max"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 30
   },
   {
     "id": "cocoa-beans-6",
@@ -116,7 +126,9 @@ export const products = [
       "Moisture": "5% max"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.3,
+    "ratingCount": 33
   },
   {
     "id": "cocoa-beans-7",
@@ -135,7 +147,9 @@ export const products = [
       "Flavor": "Unsweetened Cocoa Flavor",
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.4,
+    "ratingCount": 22
   },
   {
     "id": "vanilla-1",
@@ -153,7 +167,9 @@ export const products = [
       "Shelf-life": "2 Years"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.2,
+    "ratingCount": 31
   },
   {
     "id": "vanilla-2",
@@ -171,7 +187,9 @@ export const products = [
       "Shelf-life": "2 Years"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 35
   },
   {
     "id": "vanilla-3",
@@ -189,7 +207,9 @@ export const products = [
       "Shelf-life": "2 Years"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.7,
+    "ratingCount": 27
   },
   {
     "id": "vanilla-4",
@@ -207,7 +227,9 @@ export const products = [
       "Shelf-life": "2 Years"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 25
   },
   {
     "id": "vanilla-5",
@@ -224,7 +246,9 @@ export const products = [
       "Grain Size": "less than 300 micron",
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 40
   },
   {
     "id": "vanilla-6",
@@ -243,7 +267,9 @@ export const products = [
       "Appearance": "Pulp oil, fresh grains",
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.1,
+    "ratingCount": 39
   },
   {
     "id": "vanilla-7",
@@ -262,7 +288,9 @@ export const products = [
       "Appearance": "Pulp oil, fresh grains",
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 29
   },
   {
     "id": "vanilla-8",
@@ -280,7 +308,9 @@ export const products = [
       "Vanilla Source": "Planifolia beans (Madagascar / Uganda)"
     },
     "origin": "Madagascar, Uganda, Ghana & Ivory Coast",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.7,
+    "ratingCount": 30
   },
   {
     "id": "vanilla-9",
@@ -296,7 +326,9 @@ export const products = [
       "Aroma": "Sweet, creamy, and powerful vanilla scent",
       "Vanilla Content": "Equivalent to high-grade vanilla beans",
     },
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 31
   },
   {
     "id": "vanilla-10",
@@ -311,7 +343,9 @@ export const products = [
       "Appearance": "Fine granulated sugar with visible vanilla specks",
       "Aroma": "Sweet, warm, and naturally vanilla-scented",
     },
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 29
   },
   {
     "id": "vanilla-11",
@@ -329,7 +363,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.7,
+    "ratingCount": 30
   },
   {
     "id": "spices-1",
@@ -351,7 +387,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.9,
+    "ratingCount": 29
   },
   {
     "id": "spices-2",
@@ -373,7 +411,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.2,
+    "ratingCount": 31
   },
   {
     "id": "spices-3",
@@ -395,7 +435,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 39
   },
   {
     "id": "spices-4",
@@ -418,7 +460,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "India / Guatemala",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.1,
+    "ratingCount": 30
   },
   {
     "id": "spices-5",
@@ -440,7 +484,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.4,
+    "ratingCount": 31
   },
   {
     "id": "spices-6",
@@ -462,7 +508,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar / Uganda",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 38
   },
   {
     "id": "spices-7",
@@ -484,7 +532,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.4,
+    "ratingCount": 26
   },
   {
     "id": "spices-9",
@@ -505,7 +555,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.3,
+    "ratingCount": 21
   },
   {
     "id": "spices-10",
@@ -524,7 +576,9 @@ export const products = [
       "Shelf-life": "02 Years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 37
   },
   {
     "id": "spices-11",
