@@ -75,12 +75,12 @@ export function HeroSection({ title }: HeroSectionProps) {
           <motion.h1 className="text-3xl md:my-4 tracking-tight text-white" variants={itemVariants}>
             Welcome to Beans & Pods
           </motion.h1>
-          <motion.h1
+          <motion.h2
             className="text-6xl my-4 font-bold tracking-tight text-white md:text-5xl"
             variants={itemVariants}
           >
             {title}
-          </motion.h1>
+          </motion.h2>
           <motion.h2 className="text-white mb-8" variants={itemVariants}>
             At <span className="font-bold">Beans & Pods</span>, we are dedicated to sourcing and distributing the finest agro commodities — with a special focus on Cocoa and Vanilla. Our mission is to create a seamless, sustainable bridge between local farmers and global markets.
             <br />

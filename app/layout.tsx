@@ -9,10 +9,10 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Beans and Pods Trading Solutions | Premium Agricultural Commodities",
+    default: "Beans and Pods Trading Solutions | Premium Cocoa, Vanilla & Agricultural Products",
     template: "%s | Beans and Pods Trading Solutions"
   },
-  description: "Global supplier of premium cocoa beans, vanilla, spices, coffee, grains & pulses, and essential oils. B2B wholesale distributor based in Dubai.",
+  description: "Explore our range of premium cocoa beans, vanilla pods, and essential agricultural products. Beans & Pods ensures quality, traceability, and ethical sourcing.",
   keywords: [
     "Cocoa Beans Dubai",
     "Vanilla Beans Supplier",
@@ -23,7 +23,17 @@ export const metadata: Metadata = {
     "B2B Agricultural Products",
     "Beans and Pods Dubai",
     "Cocoa Nibs Wholesale",
-    "Vanilla Extract Supplier"
+    "Vanilla Extract Supplier",
+    "beans", 
+    "cocoa", 
+    "vanilla", 
+    "pods", 
+    "products", 
+    "essential oil", 
+    "cocoa beans", 
+    "beans pods", 
+    "agricultural products",
+    "explore"
   ],
   icons: {
     icon: '/favicon.ico',
