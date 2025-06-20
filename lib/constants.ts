@@ -599,7 +599,9 @@ export const products = [
       "Shelf-life": "2 years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 31
   },
   {
     "id": "spices-12",
@@ -622,7 +624,9 @@ export const products = [
       "Shelf-life": "2 years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 28
   },
   {
     "id": "grains-and-pulses-1",
@@ -647,7 +651,9 @@ export const products = [
       "Purity": "93.8%"
     },
     "origin": "Madagascar / Uganda / India",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 27
   },
   {
     "id": "grains-and-pulses-2",
@@ -684,7 +690,9 @@ export const products = [
       "Moisture": "12%"
     },
     "origin": "Malawi, Tanzania, India",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 34
   },
   {
     "id": "grains-and-pulses-4",
@@ -704,7 +712,9 @@ export const products = [
       "Shelf Life": "2 years"
     },
     "origin": "Madagascar",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 32
   },
   {
     "id": "grains-and-pulses-5",
@@ -723,7 +733,9 @@ export const products = [
       "Quality": "HPS Quality"
     },
     "origin": "Madagascar/Uganda/India",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.4,
+    "ratingCount": 36
   },
   {
     "id": "grains-and-pulses-6",
@@ -740,7 +752,9 @@ export const products = [
       "Moisture": "11.0% max"
     },
     "origin": "Madagascar/Uganda/India",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 34
   },
   {
     "id": "grains-and-pulses-7",
@@ -756,7 +770,9 @@ export const products = [
       "Sizes": "42-44 count per oz (12mm), 44-46 count per oz (10mm), 58-60 count per oz (9mm), 75-80 count per oz (7-8mm)"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 38
   },
   {
     "id": "grains-and-pulses-8",
@@ -775,7 +791,9 @@ export const products = [
       "Quality": "Insects and pesticides free, Excellent source of nutrients, High nutritional value, High protein content"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 31
   },
   {
     "id": "grains-and-pulses-9",
@@ -797,7 +815,9 @@ export const products = [
       "Aflatoxin": "10ppb max"
     },
     "origin": "Uganda / Tanzania / India",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 31
   },
   {
     "id": "grains-and-pulses-10",
@@ -817,7 +837,9 @@ export const products = [
       "Brokens": "2% max"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 27
   },
   {
     "id": "grains-and-pulses-11",
@@ -843,7 +865,9 @@ export const products = [
       "Immature (discoloured)": "1%"
     },
     "origin": "Madagascar / Uganda",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 40
   },
   {
     "id": "grains-and-pulses-12",
@@ -860,7 +884,9 @@ export const products = [
       "Damage Bean": "3% max"
     },
     "origin": "Madagascar / Uganda / India",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.7,
+    "ratingCount": 39
   },
   {
     "id": "essential-oil-1",
@@ -878,7 +904,9 @@ export const products = [
       "Benefits": "Promotes relaxation, reduces stress, enhances mood, and supports healthy skin and hair"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.4,
+    "ratingCount": 27
   },
   {
     "id": "essential-oil-2",
@@ -896,7 +924,9 @@ export const products = [
       "Benefits": "Uplifts mood, soothes sore muscles, purifies skin, and promotes relaxation"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 29
   },
   {
     "id": "essential-oil-3",
@@ -914,7 +944,9 @@ export const products = [
       "Benefits": "Supports oral health, soothes aches, boosts circulation, and purifies spaces"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 35
   },
   {
     "id": "essential-oil-4",
@@ -932,7 +964,9 @@ export const products = [
       "Benefits": "Antimicrobial, anti-inflammatory, improves circulation, and uplifts mood"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.7,
+    "ratingCount": 26
   },
   {
     "id": "essential-oil-5",
@@ -950,7 +984,9 @@ export const products = [
       "Benefits": "Enhances focus, stimulates hair growth, soothes skin, and reduces inflammation"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 26
   },
   {
     "id": "essential-oil-6",
@@ -968,7 +1004,9 @@ export const products = [
       "Benefits": "Calms the mind, relieves anxiety, promotes skin healing, and improves sleep quality"
     },
     "origin": "",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.7,
+    "ratingCount": 29
   },
   {
     "id": "coffee-1",
@@ -986,7 +1024,9 @@ export const products = [
       "Nutritional Benefits": "Naturally low in fat and calories"
     },
     "origin": "Uganda / Madagascar / India / Ethopia / Kenya",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.6,
+    "ratingCount": 29
   },
   {
     "id": "coffee-2",
@@ -1004,6 +1044,8 @@ export const products = [
       "Caffeine Content": "Higher than Arabica, offering a stronger kick"
     },
     "origin": "Sourced from established Robusta-growing regions",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.5,
+    "ratingCount": 37
   }
 ];
