@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { GoogleMapsEmbed } from '@next/third-parties/google'
 import { BsWhatsapp } from "react-icons/bs";

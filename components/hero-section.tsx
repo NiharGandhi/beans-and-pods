@@ -60,6 +60,7 @@ export function HeroSection({ title }: HeroSectionProps) {
           alt="Agricultural field"
           fill
           priority
+          fetchPriority="high"
           className="h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black opacity-60" />
