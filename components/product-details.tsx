@@ -63,7 +63,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
         <div>
           <div className="mb-6">
-            <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
+            <h2 className="text-3xl font-bold mb-2">{product.name}</h2>
             {/* 👇 Add this block for visible rating */}
             {product.ratingValue && product.ratingCount && (
               <div className="text-sm text-gray-600 mb-2">
