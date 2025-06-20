@@ -76,7 +76,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -151,7 +151,7 @@ export default function RootLayout({
         <link rel="preload" href="/product_categories/cocoa.webp" as="image" />
         <link rel="preload" href="/product_categories/vanilla.webp" as="image" />
         <link rel="preload" href="/product_categories/coffee.webp" as="image" />
-      </Head>
+      </head>
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col">
           <Header />
