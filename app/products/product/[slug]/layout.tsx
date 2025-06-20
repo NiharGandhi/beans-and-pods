@@ -29,6 +29,10 @@ export async function generateMetadata(
       `${category?.name} products`,
       `buy ${product.name} in Dubai`,
     ],
+    robots: {
+      index: true,
+      follow: true
+    },
     openGraph: {
       title: `${product.name} | Beans and Pods`,
       description: product.shortDescription,
