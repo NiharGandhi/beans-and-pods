@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import Head from "next/head"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -24,14 +25,14 @@ export const metadata: Metadata = {
     "Beans and Pods Dubai",
     "Cocoa Nibs Wholesale",
     "Vanilla Extract Supplier",
-    "beans", 
-    "cocoa", 
-    "vanilla", 
-    "pods", 
-    "products", 
-    "essential oil", 
-    "cocoa beans", 
-    "beans pods", 
+    "beans",
+    "cocoa",
+    "vanilla",
+    "pods",
+    "products",
+    "essential oil",
+    "cocoa beans",
+    "beans pods",
     "agricultural products",
     "explore"
   ],
@@ -75,20 +76,48 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Beans and Pods Trading Solutions",
-          "url": "https://www.beansandpods.com",
-          "logo": "https://www.beansandpods.com/logo.png",
-          "sameAs": [
-            // Add your social profiles here
-          ],
-          "description": "Global supplier of premium cocoa beans, vanilla, spices, coffee, grains & pulses, and essential oils. B2B wholesale distributor based in Dubai."
-        }) }} />
-      </head>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Beans & Pods Trading Solutions",
+              "image": "https://www.beansandpods.com/logo.png",
+              "@id": "https://www.beansandpods.com",
+              "url": "https://www.beansandpods.com",
+              "telephone": "+97145521464",
+              "email": "info@beansandpods.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Office 2812, Churchill Tower, Marasi Drive",
+                "addressLocality": "Business Bay",
+                "addressRegion": "Dubai",
+                "postalCode": "",
+                "addressCountry": "AE"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 25.1870,
+                "longitude": 55.2732
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+            })
+          }}
+        />
+      </Head>
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col">
           <Header />
