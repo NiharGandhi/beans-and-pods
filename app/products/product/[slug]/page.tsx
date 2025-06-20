@@ -35,6 +35,7 @@ export default async function ProductPage(props: { params: Promise<{ slug: strin
             "name": product.name,
             "image": [product.image],
             "description": product.shortDescription,
+            "sku": product.id,
             "brand": {
               "@type": "Brand",
               "name": "Beans and Pods"
