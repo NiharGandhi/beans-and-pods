@@ -46,7 +46,7 @@ export default function Header() {
               transition={{ duration: 0.5 }}
               className="flex items-center"
             >
-              <Image src={"/monogram.png"} height={700} width={700} alt="" />
+              <Image src={"/monogram.png"} height={700} width={700} alt="Beans and Pods Monogram" />
             </motion.div>
           </motion.div>
         )}
