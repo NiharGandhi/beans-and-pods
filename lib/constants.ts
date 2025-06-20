@@ -670,7 +670,9 @@ export const products = [
       "  Caliber ": "WKB 200/220 - 220/240",
     },
     "origin": "Madagascar / Uganda / India",
-    "certifications": []
+    "certifications": [],
+    "ratingValue": 4.8,
+    "ratingCount": 27
   },
   {
     "id": "grains-and-pulses-3",
