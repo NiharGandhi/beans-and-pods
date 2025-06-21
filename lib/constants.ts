@@ -16,7 +16,7 @@ export const products = [
     "name": "Cocoa Beans",
     "slug": "cocoa-beans",
     "category": "cocoa-beans",
-    "image": "/cocoa_products/cocoa-beans.png",
+    "image": "/cocoa_products/cocoa-beans.webp",
     "shortDescription": "Naturally Grown, Hand- harvested, Fermented, Sun-dried, Premium Cacao Beans",
     "description": "Our cacao beans are cultivated using traditional, sustainable farming practices without the use of synthetic chemicals or pesticides. Grown in nutrient-rich soils, each bean is hand-harvested at peak ripeness to ensure optimal flavor and quality. \n After harvest, the beans undergo a meticulous fermentation process, typically lasting 5 to 7 days, which enhances their natural flavor profile by reducing bitterness and developing rich, complex notes. Following fermentation, the beans are sun-dried under controlled conditions to preserve their natural qualities and maintain low moisture content—critical for safe storage and transport. \n We take great pride in maintaining a 100% chemical-free environment throughout processing and packaging. Our facilities strictly avoid the use of additives, preservatives, or artificial enhancers, ensuring that our beans retain their natural integrity from farm to shipment.",
     "specifications": {
@@ -55,7 +55,7 @@ export const products = [
     "name": "Cocoa Mass",
     "slug": "cocoa-mass",
     "category": "cocoa-beans",
-    "image": "/cocoa_products/cocoa-mass.png",
+    "image": "/cocoa_products/cocoa-mass.webp",
     "shortDescription": "Pure, unrefined cocoa mass offering rich, intense chocolate flavor for gourmet and industrial use.",
     "description": "Our Cocoa Mass, also known as Cocoa Liquor, is a rich, aromatic paste crafted from finely ground, roasted cocoa nibs. Sourced from the world’s most esteemed cocoa-growing regions, this pure, unsweetened product is the essence of chocolate in its most concentrated form. With its deep flavor profile, smooth texture, and high cocoa butter content, our cocoa mass is the preferred choice of master chocolatiers, luxury confectioners, and gourmet artisans seeking unmatched quality and depth in their creations.",
     "specifications": {
@@ -75,7 +75,7 @@ export const products = [
     "name": "Natural Cocoa Butter",
     "slug": "natural-cocoa-butter",
     "category": "cocoa-beans",
-    "image": "/cocoa_products/cocoa-butter.jpg",
+    "image": "/cocoa_products/cocoa-butter.webp",
     "shortDescription": "Pure, natural cocoa butter delivering creamy texture and rich chocolate aroma for food and cosmetics.",
     "description": "Our Natural Cocoa Butter is a silky, golden fat extracted from premium-grade cocoa beans, prized for its delicate chocolate aroma and velvety texture. Unrefined and minimally processed, it retains all the richness of its origin—making it a coveted ingredient in luxury skincare, artisanal chocolate, and high-end wellness formulations. With its exceptional emollient properties and naturally smooth finish, our cocoa butter embodies purity, indulgence, and timeless elegance.",
     "specifications": {
@@ -93,7 +93,7 @@ export const products = [
     "name": "Natural Cocoa Powder",
     "slug": "natural-cocoa-powder",
     "category": "cocoa-beans",
-    "image": "/cocoa_products/natural-cocoa-powder.jpg",
+    "image": "/cocoa_products/natural-cocoa-powder.webp",
     "shortDescription": "Pure, unsweetened natural cocoa powder with robust, authentic chocolate flavor.",
     "description": "Natural Cocoa Powder is produced by finely grinding roasted cocoa beans after the extraction of cocoa butter. It retains the rich, intense chocolate flavor and deep color characteristic of premium cocoa. Free from alkalizing agents, our natural cocoa powder offers a slightly acidic profile, making it ideal for traditional baking, confectionery, and beverage applications. Sourced from trusted origins, it meets rigorous quality standards to ensure consistency and superior taste in every batch.",
     "specifications": {
@@ -114,7 +114,7 @@ export const products = [
     "name": "Alkalized Cocoa Powder",
     "slug": "alkalized-cocoa-powder",
     "category": "cocoa-beans",
-    "image": "/cocoa_products/alkalized-cocoa-powder.png",
+    "image": "/cocoa_products/alkalized-cocoa-powder.webp",
     "shortDescription": "Dutch-process cocoa powder with mellow flavor and dark color",
     "description": "Alkalized Cocoa Powder, also known as Dutch-processed cocoa, is treated with an alkalizing agent to neutralize its natural acidity. This process enhances its color, giving it a darker, richer hue, and produces a smoother, milder flavor profile. Ideal for premium baking, confectionery, and beverage applications, our alkalized cocoa powder delivers consistent quality and excellent solubility, meeting the demands of sophisticated recipes and high-end food products.",
     "specifications": {
@@ -135,7 +135,7 @@ export const products = [
     "name": "Alkalized Cocoa Powder (Black)",
     "slug": "alkalized-cocoa-powder-black",
     "category": "cocoa-beans",
-    "image": "/cocoa_products/alkalized-cocoa-powder-black.png",
+    "image": "/cocoa_products/alkalized-cocoa-powder-black.webp",
     "shortDescription": "Deep-colored alkalized cocoa powder delivering intense chocolate flavor with smooth, rich notes.",
     "description": "Alkalized Cocoa Powder, also known as Dutch-processed cocoa, is treated with an alkalizing agent to neutralize its natural acidity. This process enhances its color, giving it a darker, richer hue, and produces a smoother, milder flavor profile. Ideal for premium baking, confectionery, and beverage applications, our alkalized cocoa powder delivers consistent quality and excellent solubility, meeting the demands of sophisticated recipes and high-end food products.",
     "specifications": {
