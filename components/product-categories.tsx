@@ -6,7 +6,7 @@ import React from "react"
 export const ProductCategories = React.memo(function ProductCategories() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {productCategories.map((category) => (
+      {productCategories.map((category, index) => (
         <Link
           key={category.slug}
           href={`/products/${category.slug}`}
@@ -19,7 +19,8 @@ export const ProductCategories = React.memo(function ProductCategories() {
               src={category.image || "/images/category-placeholder.jpg"}
               alt={category.name}
               fill
-              priority
+              loading={index === 0 ? "eager" : "lazy"}
+              priority={index === 0}
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
