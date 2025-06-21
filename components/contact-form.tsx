@@ -29,18 +29,44 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Add your form submission logic here
-    setTimeout(() => setIsSubmitting(false), 2000);
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data?.error || "Something went wrong");
+      }
+
+      setIsSuccess(true);
+      form.reset();
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+
   return (
-    <motion.div 
+    <motion.div
       className="bg-white p-6 rounded-lg shadow-md"
       initial={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: reducedMotion ? 0 : 0.2 }}
     >
-      <motion.h2 
+      <motion.h2
         className="text-2xl font-bold mb-6 text-gray-900"
         initial={{ opacity: reducedMotion ? 1 : 0 }}
         animate={{ opacity: 1 }}
@@ -61,7 +87,7 @@ export function ContactForm() {
       </motion.div>
 
       {isSuccess ? (
-        <motion.div 
+        <motion.div
           className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-md mb-6"
           initial={{ scale: reducedMotion ? 1 : 0.9, opacity: reducedMotion ? 1 : 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -69,7 +95,7 @@ export function ContactForm() {
           <p>Thank you for your message! Our team will get back to you shortly.</p>
         </motion.div>
       ) : (
-        <motion.form 
+        <motion.form
           onSubmit={handleSubmit}
           className="space-y-6"
           initial="hidden"
@@ -85,7 +111,7 @@ export function ContactForm() {
           }}
         >
           {error && (
-            <motion.div 
+            <motion.div
               className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-md"
               initial={{ opacity: reducedMotion ? 1 : 0 }}
               animate={{ opacity: 1 }}
@@ -130,8 +156,8 @@ export function ContactForm() {
           </motion.div>
 
           <motion.div className="space-y-2" variants={formItem}>
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={isSubmitting}
               className="w-full"
             >
