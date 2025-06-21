@@ -48,7 +48,7 @@ export function HeroSection({ title }: HeroSectionProps) {
 
 
   return (
-    <div className="relative isolate overflow-hidden">
+    <div className="relative isolate overflow-hidden min-h-[80vh]">
       <motion.div
         className="absolute inset-0 -z-10"
         variants={backgroundVariants}
@@ -61,9 +61,9 @@ export function HeroSection({ title }: HeroSectionProps) {
           fill
           priority
           fetchPriority="high"
-          className="h-full w-full object-cover object-center"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black opacity-60" />
+        <div className="absolute inset-0 bg-black/60" />
       </motion.div>
 
       <motion.div
