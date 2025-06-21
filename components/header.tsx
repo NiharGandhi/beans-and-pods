@@ -69,7 +69,6 @@ export default function Header() {
                   width={0} 
                   alt="Beans & Pods"
                   priority
-                  loading="lazy"
                   className="w-[100px] h-[100px] object-contain"
                 />
               </div>
