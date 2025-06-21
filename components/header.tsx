@@ -59,13 +59,19 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.5 }}
       >
-        <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 md:py-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
-              {/* <span className="sr-only">Beans and Pods Trading</span> */}
               <div className="flex items-center">
-                <Image src={"/logo.png"} height={150} width={150} alt="Beans & Pods" />
-                {/* <span className="ml-2 text-lg font-semibold text-gray-900">Beans & Pods</span> */}
+                <Image 
+                  src={"/logo.png"} 
+                  height={0} 
+                  width={0} 
+                  alt="Beans & Pods"
+                  priority
+                  loading="lazy"
+                  className="w-[100px] h-[100px] object-contain"
+                />
               </div>
             </Link>
           </div>
