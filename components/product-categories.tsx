@@ -14,12 +14,12 @@ export const ProductCategories = React.memo(function ProductCategories() {
           aria-label={`Explore ${category.name} category`}
         >
           {/* Image container with gradient overlay */}
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative aspect-[4/3] overflow-hidden">
             <Image
               src={category.image || "/images/category-placeholder.jpg"}
               alt={category.name}
               fill
-              loading="lazy"
+              priority
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
