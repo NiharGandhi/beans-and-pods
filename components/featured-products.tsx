@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import { useReducedMotion } from "@/hooks/use-mobile";
 
 export function FeaturedProducts() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -16,6 +17,7 @@ export function FeaturedProducts() {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const reducedMotion = useReducedMotion();
 
   const displayProducts = [
     {
@@ -158,42 +160,42 @@ export function FeaturedProducts() {
 
   // Animation variants
   const container = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: reducedMotion ? 1 : 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
+        staggerChildren: reducedMotion ? 0 : 0.1,
+        delayChildren: reducedMotion ? 0 : 0.3
       }
     }
   };
 
   const cardItem = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: reducedMotion ? 0 : 30, opacity: reducedMotion ? 1 : 0 },
     show: { 
       y: 0, 
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: reducedMotion ? 0 : 0.7,
         ease: [0.16, 1, 0.3, 1]
       }
     },
     hover: {
-      y: isDesktop ? -8 : 0,
+      y: (isDesktop && !reducedMotion) ? -8 : 0,
       transition: { 
-        duration: 0.3,
+        duration: reducedMotion ? 0 : 0.3,
         ease: [0.16, 1, 0.3, 1]
       }
     }
   };
 
   const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 20 },
     show: { 
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: reducedMotion ? 0 : 0.8,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -203,14 +205,14 @@ export function FeaturedProducts() {
     collapsed: {
       height: "auto",
       transition: {
-        duration: 0.3,
+        duration: reducedMotion ? 0 : 0.3,
         ease: [0.16, 1, 0.3, 1]
       }
     },
     expanded: {
       height: "auto",
       transition: {
-        duration: 0.3,
+        duration: reducedMotion ? 0 : 0.3,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -247,8 +249,8 @@ export function FeaturedProducts() {
             }`}
             aria-label="Scroll left"
             disabled={!canScrollLeft}
-            whileHover={{ scale: canScrollLeft ? 1.1 : 1 }}
-            whileTap={{ scale: canScrollLeft ? 0.95 : 1 }}
+            whileHover={{ scale: (canScrollLeft && !reducedMotion) ? 1.1 : 1 }}
+            whileTap={{ scale: (canScrollLeft && !reducedMotion) ? 0.95 : 1 }}
           >
             <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-gray-700" />
           </motion.button>
@@ -274,15 +276,15 @@ export function FeaturedProducts() {
             >
               <motion.div
                 className="h-full"
-                whileHover="hover"
+                whileHover={reducedMotion ? undefined : "hover"}
                 initial="hidden"
                 animate="show"
               >
                 <Card className="overflow-hidden flex flex-col h-full group border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
                   <motion.div 
                     className="relative h-56 md:h-64 w-full overflow-hidden"
-                    whileHover={{ scale: isDesktop ? 1.02 : 1 }}
-                    transition={{ duration: 0.4 }}
+                    whileHover={{ scale: (isDesktop && !reducedMotion) ? 1.02 : 1 }}
+                    transition={{ duration: reducedMotion ? 0 : 0.4 }}
                   >
                     <Image 
                       src={product.image || "/placeholder.svg"} 
@@ -318,10 +320,10 @@ export function FeaturedProducts() {
                         {hoveredCard === product.id ? (
                           <motion.p
                             key="full"
-                            initial={{ opacity: 0, y: 10 }}
+                            initial={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}
+                            exit={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : -10 }}
+                            transition={{ duration: reducedMotion ? 0 : 0.2 }}
                             className="text-sm text-gray-600 leading-relaxed"
                           >
                             {product.fullDescription}
@@ -329,10 +331,10 @@ export function FeaturedProducts() {
                         ) : (
                           <motion.p
                             key="short"
-                            initial={{ opacity: 0, y: 10 }}
+                            initial={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}
+                            exit={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : -10 }}
+                            transition={{ duration: reducedMotion ? 0 : 0.2 }}
                             className="text-sm md:text-base text-gray-600 leading-relaxed line-clamp-3"
                           >
                             {product.shortDescription}
@@ -345,9 +347,9 @@ export function FeaturedProducts() {
                     {isDesktop && (
                       <motion.div 
                         className="absolute bottom-2 right-2 text-xs text-gray-400"
-                        initial={{ opacity: 0 }}
+                        initial={{ opacity: reducedMotion ? 1 : 0 }}
                         animate={{ opacity: hoveredCard === product.id ? 0 : 1 }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: reducedMotion ? 0 : 0.2 }}
                       >
                         Hover for details
                       </motion.div>
@@ -357,8 +359,8 @@ export function FeaturedProducts() {
                   <CardFooter className="pt-0">
                     <motion.div 
                       className="w-full"
-                      whileHover={{ scale: isDesktop ? 1.05 : 1 }} 
-                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: (isDesktop && !reducedMotion) ? 1.05 : 1 }} 
+                      whileTap={{ scale: reducedMotion ? 1 : 0.95 }}
                     >
                       <Button 
                         asChild 
@@ -386,8 +388,8 @@ export function FeaturedProducts() {
             }`}
             aria-label="Scroll right"
             disabled={!canScrollRight}
-            whileHover={{ scale: canScrollRight ? 1.1 : 1 }}
-            whileTap={{ scale: canScrollRight ? 0.95 : 1 }}
+            whileHover={{ scale: (canScrollRight && !reducedMotion) ? 1.1 : 1 }}
+            whileTap={{ scale: (canScrollRight && !reducedMotion) ? 0.95 : 1 }}
           >
             <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-gray-700" />
           </motion.button>
@@ -416,8 +418,8 @@ export function FeaturedProducts() {
         <motion.button
           onClick={toggleAutoPlay}
           className="flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: reducedMotion ? 1 : 1.05 }}
+          whileTap={{ scale: reducedMotion ? 1 : 0.95 }}
         >
           {isAutoPlaying ? (
             <Pause className="h-3 w-3 md:h-4 md:w-4 text-gray-700" />
@@ -433,14 +435,14 @@ export function FeaturedProducts() {
       {/* Call to Action */}
       <motion.div 
         className="mt-12 md:mt-16 text-center"
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.5, duration: 0.8 }}
+        transition={{ delay: reducedMotion ? 0 : 0.5, duration: reducedMotion ? 0 : 0.8 }}
       >
         <motion.div 
-          whileHover={{ scale: isDesktop ? 1.05 : 1 }} 
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: (isDesktop && !reducedMotion) ? 1.05 : 1 }} 
+          whileTap={{ scale: reducedMotion ? 1 : 0.95 }}
         >
           <Button 
             asChild 

@@ -1,19 +1,22 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useReducedMotion } from "@/hooks/use-mobile";
 
 export function TeamSection() {
+  const reducedMotion = useReducedMotion();
+  
   const container = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: reducedMotion ? 1 : 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: reducedMotion ? 0 : 0.2,
       },
     },
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 20 },
     show: { opacity: 1, y: 0 },
   };
 
@@ -21,9 +24,9 @@ export function TeamSection() {
     <section id="team" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: reducedMotion ? 0 : 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -37,9 +40,9 @@ export function TeamSection() {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           {/* Team Picture */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: reducedMotion ? 1 : 0, x: reducedMotion ? 0 : -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: reducedMotion ? 0 : 0.6, delay: reducedMotion ? 0 : 0.2 }}
             viewport={{ once: true }}
             className="w-full md:w-1/2 lg:w-2/5"
           >
@@ -56,9 +59,9 @@ export function TeamSection() {
 
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: reducedMotion ? 1 : 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: reducedMotion ? 0 : 0.4, duration: reducedMotion ? 0 : 0.8 }}
             viewport={{ once: true }}
             className="w-full md:w-1/2 lg:w-3/5 bg-white rounded-xl shadow-md p-8 md:p-12"
           >

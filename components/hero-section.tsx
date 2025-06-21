@@ -5,42 +5,45 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import heroImage from "@/public/pages/hero.webp";
+import { useReducedMotion } from "@/hooks/use-mobile";
 
 interface HeroSectionProps {
   title: string
 }
 
 export function HeroSection({ title }: HeroSectionProps) {
+  const reducedMotion = useReducedMotion();
+  
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: reducedMotion ? 1 : 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
+        staggerChildren: reducedMotion ? 0 : 0.2,
+        delayChildren: reducedMotion ? 0 : 0.3
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: reducedMotion ? 0 : 20, opacity: reducedMotion ? 1 : 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: reducedMotion ? 0 : 0.5,
         ease: "easeOut"
       }
     }
   };
 
   const backgroundVariants = {
-    hidden: { scale: 1.1, opacity: 0 },
+    hidden: { scale: reducedMotion ? 1 : 1.1, opacity: reducedMotion ? 1 : 0 },
     visible: {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: reducedMotion ? 0 : 1,
         ease: "easeOut"
       }
     }

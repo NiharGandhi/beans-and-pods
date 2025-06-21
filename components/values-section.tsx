@@ -1,31 +1,34 @@
 import { Shield, Globe, Users, TrendingUp, Box, Heart, Target } from "lucide-react";
 import { motion } from "framer-motion";
-
-// Animation variants for values
-const valuesContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const valueItem = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
+import { useReducedMotion } from "@/hooks/use-mobile";
 
 export function ValuesSection() {
+  const reducedMotion = useReducedMotion();
+
+  // Animation variants for values
+  const valuesContainer = {
+    hidden: { opacity: reducedMotion ? 1 : 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: reducedMotion ? 0 : 0.1,
+        delayChildren: reducedMotion ? 0 : 0.3,
+      },
+    },
+  };
+
+  const valueItem = {
+    hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: reducedMotion ? 0 : 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   // If no values are provided, use default values
   const displayValues = [
     {
@@ -117,7 +120,7 @@ export function ValuesSection() {
           <motion.div
             key={value.id}
             variants={valueItem}
-            whileHover={{ y: -5 }}
+            whileHover={{ y: reducedMotion ? 0 : -5 }}
             className="group flex flex-col p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 h-full"
           >
             <div className="flex items-center mb-6">
@@ -135,9 +138,9 @@ export function ValuesSection() {
               {value.description.split('\n').map((point, index) => (
                 <motion.p
                   key={index}
-                  initial={{ opacity: 0, x: -10 }}
+                  initial={{ opacity: reducedMotion ? 1 : 0, x: reducedMotion ? 0 : -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: reducedMotion ? 0 : index * 0.1 }}
                   viewport={{ once: true }}
                   className="text-gray-600 leading-relaxed flex items-start"
                 >

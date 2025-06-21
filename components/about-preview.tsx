@@ -3,50 +3,53 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import { useReducedMotion } from "@/hooks/use-mobile"
 
 export function AboutPreview() {
+  const reducedMotion = useReducedMotion();
+  
   // Animation variants
   const container = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: reducedMotion ? 1 : 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2
+        staggerChildren: reducedMotion ? 0 : 0.2,
+        delayChildren: reducedMotion ? 0 : 0.2
       }
     }
   }
 
   const imageAnim = {
-    hidden: { x: -50, opacity: 0 },
+    hidden: { x: reducedMotion ? 0 : -50, opacity: reducedMotion ? 1 : 0 },
     show: {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.8,
+        duration: reducedMotion ? 0 : 0.8,
         ease: "easeOut"
       }
     }
   }
 
   const textAnim = {
-    hidden: { x: 50, opacity: 0 },
+    hidden: { x: reducedMotion ? 0 : 50, opacity: reducedMotion ? 1 : 0 },
     show: {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.8,
+        duration: reducedMotion ? 0 : 0.8,
         ease: "easeOut"
       }
     }
   }
 
   const fadeIn = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: reducedMotion ? 1 : 0 },
     show: {
       opacity: 1,
       transition: {
-        duration: 0.8
+        duration: reducedMotion ? 0 : 0.8
       }
     }
   }
@@ -97,8 +100,8 @@ export function AboutPreview() {
           </div>
 
           <motion.div 
-            whileHover={{ scale: 1.05 }} 
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: reducedMotion ? 1 : 1.05 }} 
+            whileTap={{ scale: reducedMotion ? 1 : 0.95 }}
             variants={fadeIn}
           >
             <Button asChild>

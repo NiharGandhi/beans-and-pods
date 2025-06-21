@@ -4,41 +4,44 @@ import { PageHeader } from "@/components/page-header";
 import { ContactForm } from "@/components/contact-form";
 import { ContactInfo } from "@/components/contact-info";
 import { motion } from "framer-motion";
-
-// Animation variants
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
-const fadeIn = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
+import { useReducedMotion } from "@/hooks/use-mobile";
 
 export default function ContactPage() {
+  const reducedMotion = useReducedMotion();
+
+  // Animation variants
+  const container = {
+    hidden: { opacity: reducedMotion ? 1 : 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: reducedMotion ? 0 : 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: reducedMotion ? 0 : 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: reducedMotion ? 1 : 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: reducedMotion ? 0 : 0.8,
+      },
+    },
+  };
+
   return (
     <motion.div
       initial="hidden"

@@ -6,69 +6,90 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-
-const formItem = {
-  hidden: { opacity: 0, x: -10 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut"
-    }
-  }
-};
+import { useReducedMotion } from "@/hooks/use-mobile";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const reducedMotion = useReducedMotion();
+
+  const formItem = {
+    hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: reducedMotion ? 0 : 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Add your form submission logic here
+    setTimeout(() => setIsSubmitting(false), 2000);
+  };
 
   return (
     <motion.div 
-      className="bg-white p-6 rounded-lg shadow-sm border"
-      initial={{ opacity: 0, y: 20 }}
+      className="bg-white p-6 rounded-lg shadow-md"
+      initial={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
+      transition={{ delay: reducedMotion ? 0 : 0.2 }}
     >
       <motion.h2 
-        className="text-xl font-semibold mb-6"
-        initial={{ opacity: 0 }}
+        className="text-2xl font-bold mb-6 text-gray-900"
+        initial={{ opacity: reducedMotion ? 1 : 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: reducedMotion ? 0 : 0.4 }}
       >
-        Send Us a Message
+        Send us a message
       </motion.h2>
+
+      <motion.div
+        className="mb-6"
+        initial={{ scale: reducedMotion ? 1 : 0.9, opacity: reducedMotion ? 1 : 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: reducedMotion ? 0 : 0.6 }}
+      >
+        <p className="text-gray-600">
+          Have questions about our products? We'd love to hear from you.
+        </p>
+      </motion.div>
 
       {isSuccess ? (
         <motion.div 
           className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-md mb-6"
-          initial={{ scale: 0.9, opacity: 0 }}
+          initial={{ scale: reducedMotion ? 1 : 0.9, opacity: reducedMotion ? 1 : 0 }}
           animate={{ scale: 1, opacity: 1 }}
         >
           <p>Thank you for your message! Our team will get back to you shortly.</p>
         </motion.div>
       ) : (
         <motion.form 
-          onSubmit={() => console.log("Submitted")} 
+          onSubmit={handleSubmit}
           className="space-y-6"
           initial="hidden"
           animate="visible"
           variants={{
+            hidden: { opacity: reducedMotion ? 1 : 0 },
             visible: {
+              opacity: 1,
               transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.4
-              }
-            }
+                staggerChildren: reducedMotion ? 0 : 0.1,
+              },
+            },
           }}
         >
           {error && (
             <motion.div 
               className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-md"
-              initial={{ opacity: 0 }}
+              initial={{ opacity: reducedMotion ? 1 : 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              exit={{ opacity: reducedMotion ? 1 : 0 }}
             >
               <p>{error}</p>
             </motion.div>
@@ -108,10 +129,11 @@ export function ContactForm() {
             <Textarea id="message" name="message" rows={5} required />
           </motion.div>
 
-          <motion.div variants={formItem}>
+          <motion.div className="space-y-2" variants={formItem}>
             <Button 
               type="submit" 
               disabled={isSubmitting}
+              className="w-full"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>

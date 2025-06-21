@@ -58,6 +58,34 @@
   }
 }
 
+/* Disable all animations on mobile devices */
+@media (max-width: 767px) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: -0.01ms !important;
+    transition-delay: -0.01ms !important;
+  }
+  
+  /* Disable transforms on mobile */
+  * {
+    transform: none !important;
+  }
+  
+  /* Disable hover effects on mobile */
+  *:hover {
+    transform: none !important;
+  }
+  
+  /* Disable scale effects on mobile */
+  *:active {
+    transform: none !important;
+  }
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

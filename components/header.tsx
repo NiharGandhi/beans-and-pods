@@ -8,19 +8,21 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import Image from "next/image"
+import { useReducedMotion } from "@/hooks/use-mobile"
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const pathname = usePathname()
+  const reducedMotion = useReducedMotion()
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 2500) // Adjust timing as needed
+    }, reducedMotion ? 100 : 2500) // Faster loading on mobile
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [reducedMotion])
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -38,15 +40,22 @@ export default function Header() {
             className="fixed inset-0 flex items-center justify-center bg-[#bb9f87] z-50"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: reducedMotion ? 0.1 : 0.5 }}
           >
             <motion.div
-              initial={{ scale: 1.2 }}
+              initial={{ scale: reducedMotion ? 1 : 1.2 }}
               animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: reducedMotion ? 0.1 : 0.5 }}
               className="flex items-center"
             >
-              <Image src={"/monogram.png"} height={700} width={700} alt="Beans and Pods Monogram" />
+              <Image
+                src="/monogram.svg"
+                alt="Beans and Pods Monogram"
+                width={400}
+                height={400}
+                priority
+                className="w-100 h-100 md:w-[500px] md:h-[500px] object-contain"
+              />
             </motion.div>
           </motion.div>
         )}
@@ -55,18 +64,18 @@ export default function Header() {
       {/* Main Header */}
       <motion.header
         className="bg-white border-b"
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
+        transition={{ delay: reducedMotion ? 0 : 1.5, duration: reducedMotion ? 0.1 : 0.5 }}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 md:py-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
               <div className="flex items-center">
-                <Image 
-                  src={"/logo.png"} 
-                  height={0} 
-                  width={0} 
+                <Image
+                  src={"/logo.png"}
+                  height={0}
+                  width={0}
                   alt="Beans & Pods"
                   priority
                   className="w-[100px] h-[100px] object-contain"

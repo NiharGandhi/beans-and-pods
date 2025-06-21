@@ -6,41 +6,44 @@ import { ValuesSection } from "@/components/values-section";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Metadata } from "next";
-
-// Animation variants
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
-const fadeIn = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
+import { useReducedMotion } from "@/hooks/use-mobile";
 
 export default function AboutPage() {
+  const reducedMotion = useReducedMotion();
+
+  // Animation variants
+  const container = {
+    hidden: { opacity: reducedMotion ? 1 : 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: reducedMotion ? 0 : 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: reducedMotion ? 0 : 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: reducedMotion ? 1 : 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: reducedMotion ? 0 : 0.8,
+      },
+    },
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -96,8 +99,8 @@ export default function AboutPage() {
         <motion.div
           className="relative h-[400px] rounded-lg overflow-hidden"
           variants={item}
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.3 }}
+          whileHover={{ scale: reducedMotion ? 1 : 1.02 }}
+          transition={{ duration: reducedMotion ? 0 : 0.3 }}
         >
           <Image
             src="/pages/about2.webp?height=400&width=600"
@@ -111,8 +114,8 @@ export default function AboutPage() {
       <motion.div
         className="my-16"
         variants={item}
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
+        whileHover={{ scale: reducedMotion ? 1 : 1.02 }}
+        transition={{ duration: reducedMotion ? 0 : 0.3 }}
       >
         <motion.h2 className="text-3xl font-bold mb-6">
           Our Trading Facility
