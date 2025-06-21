@@ -3,7 +3,7 @@ import { CategoryTabs } from "@/components/category-tabs"
 import { AllProducts } from "@/components/all-products"
 
 export const metadata = {
-  title: "Our Products | Premium Agricultural Commodities",
+  title: "Our Products",
   description: "Explore our range of premium agricultural trading products including cocoa beans, vanilla, spices, coffee, grains and pulses, and essential oils for your business needs",
   keywords: [
     "agricultural products wholesale",
