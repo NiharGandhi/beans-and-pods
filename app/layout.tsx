@@ -148,6 +148,7 @@ export default function RootLayout({
             }
           }
         />
+        <link rel="preload" href="/pages/hero.webp" as="image" />
         <link rel="preload" href="/product_categories/cocoa.webp" as="image" />
         <link rel="preload" href="/product_categories/vanilla.webp" as="image" />
         <link rel="preload" href="/product_categories/coffee.webp" as="image" />
