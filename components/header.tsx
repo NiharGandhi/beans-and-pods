@@ -73,7 +73,7 @@ export default function Header() {
             <Link href="/" className="-m-1.5 p-1.5">
               <div className="flex items-center">
                 <Image
-                  src={"/logo.png"}
+                  src={"/logo.webp"}
                   height={0}
                   width={0}
                   alt="Beans & Pods"
